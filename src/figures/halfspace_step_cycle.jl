@@ -11,7 +11,7 @@ a_nom = 1.18e-4     # m/s
 b_nom = 0.662       # m
 
 
-taus_yr = [0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 23.0]
+taus_yr = [0.5, 2.0, 5.0, 10.0, 20.0, 23.0]
 taus    = taus_yr .* yr
 labels  = ["$(t) yr" for t in taus_yr]
 

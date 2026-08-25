@@ -24,7 +24,7 @@ println("tau_R (= eta_a / mu_A) = $(tau_R / yr) yr")
 ell_M = a_nom * tau_R
 println("ell_M = a*tau_R = $(ell_M / 1e3) km = $(ell_M / H) H")
 
-taus_yr = [0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 100.0]
+taus_yr = [0.5, 2.0, 5.0, 10.0, 20.0, 23.0]
 taus    = taus_yr .* yr
 labels  = ["$(t) yr" for t in taus_yr]
 
