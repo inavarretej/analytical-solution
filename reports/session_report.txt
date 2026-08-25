@@ -1,0 +1,140 @@
+SESSION REPORT
+==============
+Date: 2026-05-27
+Paper: "On the build-up of extensional strain between rifting events"
+File:  tex/paper/paper_v2.tex
+
+────────────────────────────────────────────────────────────────
+WHAT WAS DONE THIS SESSION
+────────────────────────────────────────────────────────────────
+
+§4.3  Non-local diffusion vs. Fickian model
+  - Written from scratch.
+  - Explains why the Stokes half-Laplacian kernel produces Lorentzian tails
+    (|k| dispersion relation) whereas Foulger's erfc profile comes from a
+    local Laplacian (k² dispersion relation).
+  - Connects to the factor-of-2 improvement in χ²_r at Asal (18 vs 33).
+  - Corrected a sentence about the Vigny et al. (2007) Foulger fit parameters:
+    changed from "optimised for a subset" to "rounded estimates from an
+    informal fit rather than the result of a weighted χ² minimisation"
+    (verified by reading the actual Vigny et al. PDF).
+
+fig_rheology_tradeoff.jl  (Figure 7)
+  - Removed gray reference iso-a contours that were confusing and
+    not described in the caption.
+  - Removed the corresponding sentence from the figure caption in the draft.
+  - Increased fontsize from 19 to 20.
+
+fig_stochastic_css.jl  (Figure 8)  — NEW FILE
+  - Created a new 2×2 figure with four panels:
+      (a) Variable T only   (cv = 0.30, ω fixed)
+      (b) Variable ω only   (T fixed, cv = 0.30)
+      (c) Both variable     (cv_T = cv_ω = 0.30)
+      (d) Coupled           (ω_j = v_plate · T_j, cv_T = 0.30)
+  - Ensemble: 500 realisations, 300 past events, 10–90th percentile band.
+  - Key fix applied during development: stochastic velocity sum needed a
+    factor-of-2 (matching get_v_css = 2 × Σ get_v_step in models.jl).
+  - x-axis extended to both sides of the rift (range −5 to +5).
+  - Reference lines at x̂ = ±1 added to all panels.
+  - Finite-N far-field residual in panel (d) fixed by increasing N_events
+    from 60 to 300 (residual variance ~ cv/√N ≈ 1.7%).
+
+§4.4  Robustness under stochastic recurrence
+  - Written from scratch and revised several times.
+  - Describes all four ensemble scenarios.
+  - Physical explanation of panel (b): when T is fixed, each realisation
+    is an amplitude rescaling of the CSS — the profile shape is locked,
+    only the overall level shifts up or down.
+  - Restructured from "Three results stand out" to "Four results stand out"
+    and integrated panel (d) into the numbered flow.
+  - Added quantitative statement: 10–90 band spans ~1/3 of median at x̂=1
+    for combined scatter (panel c).
+  - Coupled scenario (panel d) described as a self-regulating rift where
+    crustal opening scales with elapsed time since last event.
+
+§4.5  Perspectives  — NEW SECTION
+  - Two paragraphs written.
+  - Para 1: CSS as an inversion tool — jointly constrains aT, ω/T, and τ̂
+    from a single geodetic profile, with §4.4 providing the uncertainty budget.
+  - Para 2: Extension to segmented/heterogeneous rifts — each segment has
+    its own local aT; the framework needs no new BCs; closes with 2D
+    along-strike extension as explicit open problem.
+
+Abstract
+  - Fixed a value: 4.8×10⁻⁵ → 5.1×10⁻⁵ m/s (matching §3.1 and §4.2).
+  - Fixed viscosity: "3–5×10¹⁸ Pa·s" → "~4×10¹⁸ Pa·s, factor-of-four
+    uncertainty from Young's modulus" (matching §4.2 central value).
+
+§3.2 (Asal)
+  - Fixed Grandin et al. year: 2010 → 2011 (matching reference list and §1).
+
+Figure 8 caption
+  - Panel (b) caption: "scales the profile amplitude uniformly at all distances"
+    → "the band at each distance is a fixed fraction of the local CSS value,
+    leaving the gradient position unchanged" (matches body text).
+
+────────────────────────────────────────────────────────────────
+OPEN ISSUES TO FIX BEFORE SUBMISSION
+────────────────────────────────────────────────────────────────
+
+FIGURE NUMBERS
+  Figure 1  fig:schematic         fig_schematic.png
+  Figure 2  fig:css_behavior      fig_css_behavior.png
+  Figure 3  fig:maxwell_regimes   fig_maxwell_regimes.png
+  Figure 4  fig:krafla            fig08_fits_2p_3p.png
+  Figure 5  fig:asal_ts           fig_asal_timeseries.png
+  Figure 6  fig:asal_profile      fig_asal_profile.png
+  Figure 7  fig:rheology_tradeoff fig_rheology_tradeoff.png
+  Figure 8  fig:stochastic_css    fig_stochastic_css.png
+
+ISSUE 1 — Figures 1, 2, 3 are never cited in the text
+  Figures 1 (schematic), 2 (CSS behavior), and 3 (Maxwell regimes) are
+  defined and placed in the document but no \ref{fig:...} call appears
+  in the text. Every journal figure must be cited. Needs "as shown in
+  Figure~\ref{fig:schematic}" (or equivalent) added near the relevant
+  model paragraphs.
+
+ISSUE 2 — Missing reference: Thordarson and Larsen (2007)
+  Cited twice in §4.4 (lines ~1121 and ~1167). Not in the reference list.
+  Add full reference details.
+
+ISSUE 3 — Missing reference: Ruegg et al. (1979)
+  Cited in §3.2 for "~1.9 m measured across the rift by trilateration
+  immediately after the 1978 event." Not in the reference list.
+  Add full reference details.
+
+ISSUE 4 — Missing reference: Ruegg and Kasser (1987)
+  Cited in §3.2 for "~53 mm/yr measured by trilateration shortly after
+  the event." Not in the reference list.
+  Add full reference details.
+
+ISSUE 5 — Suspicious reference: Ali et al. (2014)
+  Cited in §1 for "prescribe a basal shear traction to mimic far-field
+  plate forcing" in magmatic rifts. The reference list describes it as
+  "Geodetic measurements of postseismic deformation following the 2005
+  Kashmir (Pakistan) earthquake" — a compressional setting unrelated to
+  rift basal-shear models. Verify whether this is the correct paper or
+  replace with the intended rift-mechanics reference.
+
+ISSUE 6 — No Conclusions section
+  The paper ends at §4.5 (Perspectives) and goes straight to References.
+  Most GJI / JGR papers include a brief Conclusions section.
+  → Written as a separate task this session (see below); ready to insert.
+
+ISSUE 7 — No Acknowledgments section
+  Standard for journal submissions. Needs to be added before References.
+
+ISSUE 8 — fig:stochastic_css caption: "In all four\ncases" has a line
+  break mid-sentence in the LaTeX source. Cosmetic only; compiles fine.
+
+────────────────────────────────────────────────────────────────
+QUANTITATIVE CHECK — abstract vs. body
+────────────────────────────────────────────────────────────────
+
+  Parameter           Abstract (fixed)    §3 / §4 body
+  ─────────────────── ─────────────────── ──────────────────────────────
+  a (Krafla)          5.1×10⁻⁵ m/s  ✓    5.13×10⁻⁵ m/s  (§3.1)
+  η (Krafla, central) ~4×10¹⁸ Pa·s  ✓    4.2×10¹⁸ Pa·s  (§3.1, §4.2)
+  η (Krafla, range)   factor-of-4 ✓       [2, 8]×10¹⁸    (§4.2)
+  a (Asal)            not in abstract     9.5×10⁻⁶ m/s   (§3.2)
+  η (Asal)            not in abstract     2.2×10¹⁹ Pa·s  (§3.2, §4.2)

@@ -1,0 +1,281 @@
+\begin{thebibliography}{52}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Ablowitz \& Fokas(2003)]{ablowitz2003complex}
+Ablowitz, M.~J. \& Fokas, A.~S., 2003.
+\newblock {\it Complex Variables: Introduction and Applications\/}, Cambridge
+  University Press, Cambridge, UK, 2nd edition.
+
+\bibitem[Ali et~al.(2014)]{ali2014geodetic}
+Ali, S.~T. et~al., 2014.
+\newblock Geodetic measurements of postseismic deformation following the 2005
+  {Kashmir} ({Pakistan}) earthquake, {\it Geophysical Journal International\/}.
+
+\bibitem[Altamimi et~al.(2016)]{altamimi2016itrf2014}
+Altamimi, Z. et~al., 2016.
+\newblock {ITRF2014}: A new release of the {International Terrestrial Reference
+  Frame}, {\it Journal of Geophysical Research\/}.
+
+\bibitem[Barbot \& Fialko(2010)]{barbot2010unified}
+Barbot, S. \& Fialko, Y., 2010.
+\newblock A unified continuum representation of post-seismic relaxation
+  mechanisms and the link with precession, {\it Geophysical Journal
+  International\/}, {\bf 182}, 1124--1140.
+
+\bibitem[B{\"u}rgmann \& Dresen(2008)]{burgmann2008rheology}
+B{\"u}rgmann, R. \& Dresen, G., 2008.
+\newblock Rheology of the lower crust and upper mantle: evidence from rock
+  mechanics, geodesy, and field observations, {\it Annual Review of Earth and
+  Planetary Sciences\/}, {\bf 36}, 531--567.
+
+\bibitem[Caffarelli \& Silvestre(2007)]{caffarelli2007extension}
+Caffarelli, L. \& Silvestre, L., 2007.
+\newblock An extension problem related to the fractional {L}aplacian, {\it
+  Communications in Partial Differential Equations\/}, {\bf 32}(8), 1245--1260,
+  doi: 10.1080/03605300600987306.
+
+\bibitem[Cattin et~al.(2005)Cattin, Doubre, de~Chabalier, King, Vigny, Avouac,
+  \& Ruegg]{cattin2005numerical}
+Cattin, R., Doubre, C., de~Chabalier, J.-B., King, G., Vigny, C., Avouac,
+  J.-P., \& Ruegg, J.-C., 2005.
+\newblock Numerical modelling of quaternary deformation and post-rifting
+  displacement in the {Asal}--{Ghoubbet} rift ({Djibouti, Africa}), {\it Earth
+  and Planetary Science Letters\/}, {\bf 239}, 352--367, doi:
+  10.1016/j.epsl.2005.07.028.
+
+\bibitem[Cohen \& Kramer(1984)]{cohen1984crustal}
+Cohen, S.~C. \& Kramer, M.~J., 1984.
+\newblock Crustal deformation, the earthquake cycle, and models of viscoelastic
+  flow, {\it Geophysical Journal International\/}.
+
+\bibitem[Corti(2009)]{corti2009continental}
+Corti, G., 2009.
+\newblock Continental rift evolution: From rift initiation to incipient
+  break-up, {\it Earth-Science Reviews\/}.
+
+\bibitem[Daoud \& Laamri(2022)]{daoud2022fractional}
+Daoud, M. \& Laamri, E.~H., 2022.
+\newblock Fractional {L}aplacians: a short survey, {\it Discrete and Continuous
+  Dynamical Systems - Series S\/}, doi: 10.3934/dcdss.2021027, In press.
+
+\bibitem[Ebinger et~al.(2013)]{ebinger2013rifting}
+Ebinger, C.~J. et~al., 2013.
+\newblock Rifting in diverse tectonic settings, {\it Tectonophysics\/}.
+
+\bibitem[Fernandes et~al.(2004)]{fernandes2004defining}
+Fernandes, R. M.~S. et~al., 2004.
+\newblock Defining the plate boundaries in the {Azores} region, {\it Journal of
+  Volcanology and Geothermal Research\/}.
+
+\bibitem[Foulger et~al.(1992)]{foulger1992post}
+Foulger, G.~R. et~al., 1992.
+\newblock Post-rifting stress relaxation at the divergent plate boundary in {NE
+  Iceland}, {\it Nature\/}, {\bf 358}, 488--490.
+
+\bibitem[Grandin et~al.(2011)]{grandin2011seismicity}
+Grandin, R. et~al., 2011.
+\newblock Seismicity during lateral dike propagation, {\it Geophysical Research
+  Letters\/}.
+
+\bibitem[Heki et~al.(1993)]{heki1993plate}
+Heki, K. et~al., 1993.
+\newblock Plate dynamics near divergent boundaries: Geophysical implications of
+  postrifting crustal deformation in {NE Iceland}, {\it Journal of Geophysical
+  Research\/}, {\bf 98}, 14279--14297.
+
+\bibitem[Hetland(2006)]{hetland2006thesis}
+Hetland, E.~A., 2006.
+\newblock {\it Postseismic relaxation and interseismic coupling\/}, Ph.D.
+  thesis, Massachusetts Institute of Technology.
+
+\bibitem[Hetland \& Hager(2005)]{hetland2005postseismic}
+Hetland, E.~A. \& Hager, B.~H., 2005.
+\newblock Postseismic and interseismic displacements near a strike-slip fault:
+  A two-dimensional theory for general linear viscoelastic rheologies, {\it
+  Journal of Geophysical Research\/}, {\bf 110}, B10401.
+
+\bibitem[Hetland \& Hager(2006)]{hetland2006interseismic}
+Hetland, E.~A. \& Hager, B.~H., 2006.
+\newblock Interseismic strain accumulation: Spin-up, cycle invariance, and
+  irregular rupture sequences, {\it Geochemistry, Geophysics, Geosystems\/},
+  {\bf 7}, Q03010.
+
+\bibitem[Hofton et~al.(1995)]{hofton1995horizontal}
+Hofton, M.~A. et~al., 1995.
+\newblock Horizontal surface deformation in {Iceland} 1993, {\it Journal of
+  Geophysical Research\/}.
+
+\bibitem[Hofton \& Foulger(1996)]{hofton1996post}
+Hofton, M.~A. \& Foulger, G.~R., 1996.
+\newblock Post-rifting anelastic deformation around the spreading plate
+  boundary, north {Iceland}, {\it Journal of Geophysical Research\/}.
+
+\bibitem[Holtzman(2016)]{holtzman2016questions}
+Holtzman, B.~K., 2016.
+\newblock Questions on the existence, persistence, and mechanical effects of a
+  very small melt fraction in the asthenosphere, {\it Geochemistry, Geophysics,
+  Geosystems\/}.
+
+\bibitem[Konca et~al.(2018)]{konca2018slip}
+Konca, A.~O. et~al., 2018.
+\newblock Slip distribution and moment tensor of the 2010 {Mw 7.2 Baja
+  California} earthquake, {\it Geophysical Journal International\/}.
+
+\bibitem[Kreemer et~al.(2014)]{kreemer2014geodetic}
+Kreemer, C. et~al., 2014.
+\newblock A geodetic plate motion and global strain rate model, {\it
+  Geochemistry, Geophysics, Geosystems\/}.
+
+\bibitem[{LaFemina} et~al.(2005)]{lafemina2005geodetic}
+{LaFemina}, P.~C. et~al., 2005.
+\newblock Geodetic {GPS} measurements in south {Iceland}: Strain accumulation
+  and partitioning in a propagating ridge system, {\it Journal of Geophysical
+  Research\/}.
+
+\bibitem[Laurie(1997)]{laurie1997calculation}
+Laurie, D.~P., 1997.
+\newblock Calculation of {Gauss--Kronrod} quadrature rules, {\it Mathematics of
+  Computation\/}, {\bf 66}, 1133--1145.
+
+\bibitem[{Le~Dain} et~al.(1979)]{ledain1979seismotectonic}
+{Le~Dain}, A.~Y. et~al., 1979.
+\newblock Seismotectonic aspects of the {Asal--Ghoubbet} rift, {\it Bulletin de
+  la Soci{\'e}t{\'e} G{\'e}ologique de France\/}.
+
+\bibitem[Maccaferri et~al.(2016)]{maccaferri2016time}
+Maccaferri, F. et~al., 2016.
+\newblock Time-dependent rift magma intrusions and their effect on seismicity,
+  {\it Geophysical Research Letters\/}.
+
+\bibitem[Metzler \& Klafter(2000)]{metzler2000random}
+Metzler, R. \& Klafter, J., 2000.
+\newblock The random walk's guide to anomalous diffusion, {\it Physics
+  Reports\/}, {\bf 339}, 1--77.
+
+\bibitem[Nooner et~al.(2009)]{nooner2009post}
+Nooner, S.~L. et~al., 2009.
+\newblock Post-rifting relaxation in the {Afar} region, {Ethiopia}, {\it
+  Geophysical Research Letters\/}, {\bf 36}, L21308.
+
+\bibitem[Nur \& Mavko(1974)]{nur1974postseismic}
+Nur, A. \& Mavko, G., 1974.
+\newblock Postseismic viscoelastic rebound, {\it Science\/}, {\bf 183},
+  204--206.
+
+\bibitem[Plasman et~al.(2017)]{plasman2017lithospheric}
+Plasman, M. et~al., 2017.
+\newblock Lithospheric strength variations in {Mainland China}: Tectonic
+  implications, {\it Geophysical Journal International\/}.
+
+\bibitem[Prodehl et~al.(1997)]{prodehl1997east}
+Prodehl, C. et~al., 1997.
+\newblock The {East African} rift system --- a review of crustal structure
+  studies, {\it Tectonophysics\/}.
+
+\bibitem[Reiss et~al.(2022)]{reiss2022shallow}
+Reiss, M.~C. et~al., 2022.
+\newblock Shallow seismicity and the classification of structures in the
+  {Natron Basin}, {\it Tectonophysics\/}.
+
+\bibitem[Ruegg et~al.(1984)]{ruegg1984seismotectonic}
+Ruegg, J.~C. et~al., 1984.
+\newblock Seismotectonic aspects of the {Asal} rift system, {\it
+  Tectonophysics\/}, {\bf 104}, 153--183.
+
+\bibitem[Ruegg \& Kasser(1987)]{ruegg1987deformation}
+Ruegg, J.~C. \& Kasser, M., 1987.
+\newblock Deformation across the {Asal--Ghoubbet} rift, {Djibouti}: uplift and
+  crustal extension 1979--1986, {\it Geophysical Research Letters\/}, {\bf 14},
+  745--748.
+
+\bibitem[Ruegg et~al.(1979)Ruegg, L{\'e}pine, Tarantola, \&
+  Kasser]{ruegg1979geodetic}
+Ruegg, J.~C., L{\'e}pine, J.~C., Tarantola, A., \& Kasser, M., 1979.
+\newblock Geodetic measurements of rifting associated with a seismo-volcanic
+  crisis in {Afar}, {\it Geophysical Research Letters\/}, {\bf 6}, 817--820.
+
+\bibitem[Samko \& Ross(1993)]{samko1993integration}
+Samko, S.~G. \& Ross, B., 1993.
+\newblock Integration and differentiation to a variable fractional order, {\it
+  Integral Transforms and Special Functions\/}, {\bf 1}, 277--300.
+
+\bibitem[Samko et~al.(1993)Samko, Kilbas, \& Marichev]{samko1993fractional}
+Samko, S.~G., Kilbas, A.~A., \& Marichev, O.~I., 1993.
+\newblock {\it Fractional Integrals and Derivatives: Theory and
+  Applications\/}, Gordon and Breach, Yverdon.
+
+\bibitem[Saria et~al.(2014)]{saria2014present}
+Saria, E. et~al., 2014.
+\newblock Present-day kinematics of the {East African} rift, {\it Journal of
+  Geophysical Research\/}.
+
+\bibitem[Savage(1983)]{savage1983dislocation}
+Savage, J.~C., 1983.
+\newblock A dislocation model of strain accumulation and release at a
+  subduction zone, {\it Journal of Geophysical Research\/}, {\bf 88},
+  4984--4996.
+
+\bibitem[Savage \& Prescott(1978)]{savage1978asthenosphere}
+Savage, J.~C. \& Prescott, W.~H., 1978.
+\newblock Asthenosphere readjustment and the earthquake cycle, {\it Journal of
+  Geophysical Research\/}, {\bf 83}, 3369--3376.
+
+\bibitem[Sigmundsson(1991)]{sigmundsson1991postglacial}
+Sigmundsson, F., 1991.
+\newblock Post-glacial rebound and asthenosphere viscosity in {Iceland}, {\it
+  Geophysical Research Letters\/}, {\bf 18}(6), 1131--1134, doi:
+  10.1029/91GL01342.
+
+\bibitem[Sigmundsson et~al.(2010)]{sigmundsson2010geodetic}
+Sigmundsson, F. et~al., 2010.
+\newblock Geodetic constraints on the properties of the lithosphere in
+  {Iceland}, {\it Journal of Geophysical Research\/}.
+
+\bibitem[Spence \& Turcotte(1979)]{spence1979magma}
+Spence, D.~A. \& Turcotte, D.~L., 1979.
+\newblock Magma-driven propagation of cracks, {\it Journal of Geophysical
+  Research\/}.
+
+\bibitem[Stamps et~al.(2018)]{stamps2018virtual}
+Stamps, D.~S. et~al., 2018.
+\newblock A virtual geodetic observatory for monitoring {East African Rift}
+  deformation, {\it Geochemistry, Geophysics, Geosystems\/}.
+
+\bibitem[Stamps et~al.(2021)]{stamps2021redefining}
+Stamps, D.~S. et~al., 2021.
+\newblock Redefining {East African Rift System} kinematics, {\it Geology\/}.
+
+\bibitem[Stevens et~al.(2021)]{stevens2021tectonic}
+Stevens, V.~L. et~al., 2021.
+\newblock Tectonic and volcanic deformation at the {Laguna del Maule} volcanic
+  field, {\it Journal of Geophysical Research\/}.
+
+\bibitem[Thatcher \& Rundle(1984)]{thatcher1984viscoelastic}
+Thatcher, W. \& Rundle, J.~B., 1984.
+\newblock A viscoelastic coupling model for the cyclic deformation due to
+  periodically repeated earthquakes at subduction zones, {\it Journal of
+  Geophysical Research\/}, {\bf 89}, 7631--7640.
+
+\bibitem[Thordarson \& Larsen(2007)]{thordarson2007volcanism}
+Thordarson, T. \& Larsen, G., 2007.
+\newblock Volcanism in {Iceland} in historical time: volcano types, eruption
+  styles and eruptive history, {\it Journal of Geodynamics\/}, {\bf 43},
+  118--152.
+
+\bibitem[Vigny et~al.(2007)]{vigny2007twenty}
+Vigny, C. et~al., 2007.
+\newblock Twenty-five years of geodetic measurements along the {Tadjoura--Asal}
+  rift system, {Djibouti, East Africa}, {\it Journal of Geophysical
+  Research\/}.
+
+\bibitem[Weinstein et~al.(2017)]{weinstein2017fault}
+Weinstein, A. et~al., 2017.
+\newblock Fault-magma interactions during early continental rifting, {\it
+  Geochemistry, Geophysics, Geosystems\/}.
+
+\bibitem[Wright et~al.(2012)]{wright2012geophysical}
+Wright, T.~J. et~al., 2012.
+\newblock Geophysical constraints on the dynamics of spreading centres from
+  rifting episodes on land, {\it Nature Geoscience\/}, {\bf 5}, 242--250.
+
+\end{thebibliography}

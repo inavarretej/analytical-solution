@@ -1,0 +1,333 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+
+% ----------------------------------------------------------------
+\title[Inter-Rifting Strain]{Controls on the Distribution of\\
+  Extensional Strain Between Rifting Events}
+\author{Iván Navarrete \and Jean-Arthur Olive}
+\date{\today}
+% ----------------------------------------------------------------
+
+\begin{document}
+
+% ================================================================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ================================================================
+\begin{frame}{The Rifting Cycle: Three Phases}
+  \begin{columns}
+    \column{0.55\textwidth}
+      Continental rifting proceeds in three phases:
+      \begin{enumerate}
+        \item \textbf{Co-rifting} --- near-instantaneous elastic strain release via
+              dike emplacement and normal faulting
+        \item \textbf{Post-rifting} --- visco-elastic relaxation decaying over years
+              to decades
+        \item \textbf{Inter-rifting} --- secular plate divergence between events
+      \end{enumerate}
+      \vspace{0.5em}
+      \textbf{Problem:} the mechanisms that build up strain \emph{between} events
+      remain the least constrained part of the cycle.
+
+    \column{0.42\textwidth}
+      \begin{block}{Key observations}
+        \begin{itemize}
+          \item Iceland \& Afar episodes geodetically documented
+          \item Post-diking transients decay within years
+          \item Far-field velocities must converge to plate rate $\dot{u}_\infty$
+        \end{itemize}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{The Kinematic Gap}
+  \begin{columns}
+    \column{0.55\textwidth}
+      \textbf{Standard ``backslip'' models} treat the rift as a dislocation
+      opening continuously in an elastic half-space (Savage \& Prescott 1978).
+
+      \vspace{0.5em}
+      \textbf{Physical failures:}
+      \begin{itemize}
+        \item Ignores weak, viscous lower crust \& upper mantle
+        \item Infinitely deep dike is mechanically untenable
+        \item Short relaxation times in magmatically active regions are ignored
+        \item Finite numerical domains force $u=0$ at boundaries,
+              incompatible with observed far-field divergence
+      \end{itemize}
+
+    \column{0.42\textwidth}
+      \begin{alertblock}{The gap}
+        No model simultaneously reproduces the \emph{transient} post-diking
+        signal \emph{and} the \emph{steady-state} far-field plate divergence.
+      \end{alertblock}
+      \vspace{0.5em}
+      We bridge this gap with a fully analytical, cyclic model.
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Physical Model: Elastic Crust over Viscous Half-Space}
+  \begin{columns}
+    \column{0.52\textwidth}
+      \textbf{Setup:} elastic plate of thickness $H$ (brittle crust) coupled to a
+      Newtonian viscous half-space (asthenosphere, viscosity $\eta$).
+
+      \vspace{0.5em}
+      Stress balance (depth-averaged):
+      \begin{equation*}
+        H\,\frac{\partial\bar{\sigma}_{xx}}{\partial x}
+        + \sigma_{xz}^{\text{BOT}} = 0
+      \end{equation*}
+
+      Basal shear via the non-local \textbf{Stokes kernel}:
+      \begin{equation*}
+        \sigma_{xz}^{\text{BOT}}(x,t)
+        = \int_{-\infty}^{+\infty}
+          \frac{2\eta}{\pi(x-x')^{2}}\,\dot{u}(x',t)\,dx'
+      \end{equation*}
+
+    \column{0.45\textwidth}
+      \begin{block}{Key parameters}
+        \begin{tabular}{cl}
+          $H$   & elastic plate thickness \\
+          $E$   & Young's modulus \\
+          $\nu$ & Poisson's ratio \\
+          $\eta$ & asthenospheric viscosity \\
+          $\omega$ & half-opening per dike event \\
+          $T$   & recurrence interval \\
+        \end{tabular}
+      \end{block}
+      \vspace{-0.5cm}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/model.png}
+      \end{figure}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Fractional Diffusion and the Characteristic Velocity}
+  \textbf{Fourier transform} of the governing integro-differential equation
+  yields a simple ODE for each wavenumber $k$:
+  \begin{equation*}
+    \frac{\partial\hat{u}}{\partial t} = -a\,|k|\,\hat{u}
+    \qquad\Longleftrightarrow\qquad
+    \frac{\partial u}{\partial t} = -a\,(-\Delta)^{1/2}\,u
+  \end{equation*}
+
+  \vspace{0.3em}
+  The \textbf{characteristic velocity} $a$ encodes the elastic--viscous coupling:
+  \begin{equation*}
+    \boxed{a := \frac{EH}{2\eta(1-\nu^{2})}}
+  \end{equation*}
+
+  \vspace{0.3em}
+  \begin{block}{Physical meaning}
+    $a$ sets the \emph{speed} at which post-diking strain redistributes away
+    from the rift axis. Large $a$ (stiff crust, low viscosity) $\Rightarrow$
+    fast relaxation; small $a$ $\Rightarrow$ slow, broad deformation pattern.
+  \end{block}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Single-Event Step Response}
+  \begin{columns}
+    \column{0.48\textwidth}
+      After one dike intrusion (Heaviside IC), the displacement and velocity are:
+      \begin{align*}
+        u^{\text{STEP}}(x,t) &= \frac{\omega}{\pi}\arctan\!\left(\frac{at}{x}\right) \\[6pt]
+        v^{\text{STEP}}(x,t) &= \frac{\omega a}{\pi}\,\frac{x}{x^{2}+a^{2}t^{2}}
+      \end{align*}
+      \begin{itemize}
+        \item Displacement grows as $\arctan$ --- logarithmically slow at large $x$
+        \item Velocity has a Lorentzian shape, widening in time
+        \item \textbf{Far-field: } $u \to \omega/2$ as $t\to\infty$ (not zero!)
+      \end{itemize}
+
+    \column{0.50\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig04_vel_disp_bestfit.png}
+        \caption{CSS best-fit displacement (blue) and velocity (red) profiles.}
+      \end{figure}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Cyclo-Steady State (CSS): Summing an Infinite History}
+  After many cycles the system reaches a \textbf{periodic steady state}.
+  Summing the contributions of all past intrusions using the
+  \textbf{Digamma} ($\psi$) and \textbf{log-Gamma} ($\ln\Gamma$) functions:
+
+  \begin{align*}
+    v_{\text{CSS}}(x,\tau) &=
+      \frac{2\omega}{\pi T}\,\IM\!\left\{\psi\!\left(\frac{\tau}{T}+i\frac{x}{aT}\right)\right\} \\[8pt]
+    u_{\text{CSS}}(x,\tau) &=
+      \frac{2\omega}{\pi}\,\IM\!\left\{\ln\Gamma\!\left(\frac{\tau}{T}+i\frac{x}{aT}\right)
+      -\ln\Gamma\!\left(i\frac{x}{aT}\right)\right\}
+  \end{align*}
+
+  where $\tau\in[0,T)$ is the time elapsed since the last intrusion.
+
+  \vspace{0.4em}
+  \begin{block}{Key property: mass conservation}
+    \[
+      \int_0^T v_{\text{CSS}}(x,\tau)\,d\tau = \omega,\quad \forall\,x>0
+    \]
+    The entire right half-plate moves by $\omega$ per cycle --- consistent with
+    global plate motion models.
+  \end{block}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Maxwell Visco-Elastic Asthenosphere}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \textbf{Upgrade:} replace Newtonian fluid with a Maxwell body
+      (spring + dashpot in series), relaxation time $\tau_R = \eta/\mu_m$.
+
+      \vspace{0.5em}
+      Modified evolution equation (Fourier domain):
+      \begin{equation*}
+        \frac{\partial\hat{u}}{\partial t}
+        = -\frac{a\,|k|}{1+\tau_R a\,|k|}\,\hat{u}
+      \end{equation*}
+
+      \begin{itemize}
+        \item High-$k$ (near-field): decays at fixed rate $1/\tau_R$ (elastic phase)
+        \item Low-$k$ (far-field): recovers pure viscous $\Rightarrow$ same CSS limit
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig10_two_timescale.png}
+        \caption{Maxwell (dashed) vs.\ purely viscous (solid) step response.
+          Near the rift ($x=5$ km) the Maxwell model is initially slower,
+          converging at $\tau/\tau_R \gg 1$.}
+      \end{figure}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Model Comparison: 1-Parameter Fits}
+  \begin{columns}
+    \column{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig01_fits_1p.png}
+        \caption{\textbf{Displacement.} Step (green) and Viscoelastic (orange)
+          match the broad antisymmetric pattern; Foulger kernel (red) overshoots.}
+      \end{figure}
+
+    \column{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig02_velocity_1p.png}
+        \caption{\textbf{Velocity.} The purely elastic Foulger kernel (blue)
+          produces an unphysical spike; both fractional-diffusion models yield
+          physically smooth profiles.}
+      \end{figure}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Fitting Foulger et al.\ (1992) Iceland GPS Data}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig08_fits_2p_3p.png}
+        \caption{2- and 3-parameter fits to post-diking displacement.
+          Step ($\chi^2/\nu=0.737$) and Viscoelastic ($\chi^2/\nu=0.855$)
+          both beat the Foulger kernel ($\chi^2/\nu=0.981$).}
+      \end{figure}
+
+    \column{0.37\textwidth}
+      \begin{block}{Best-fit parameters}
+        \begin{tabular}{ll}
+          \toprule
+          Model & $a$ (m/s) \\
+          \midrule
+          Step 2p      & $4.79\times10^{-5}$ \\
+          Viscoelastic & $6.69\times10^{-5}$ \\
+          \midrule
+          & $\tau_R$ (yr) \\
+          \midrule
+          Viscoelastic & $1.87$ \\
+          \bottomrule
+        \end{tabular}
+      \end{block}
+      \vspace{0.3em}
+      The CSS step model achieves the \emph{best} fit with only 2 free parameters.
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Constraining $\tau_R$ and Physical Parameters}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig09_profile_likelihood_tauR.png}
+        \caption{Profile likelihood for $\tau_R$. Best fit: $\tau_R \approx 1.87$ yr.
+          Values $>5$ yr excluded at 95\% confidence.}
+      \end{figure}
+
+    \column{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../fig/fig12_HE_eta.png}
+        \caption{Implied $\eta(H,E)$ at best-fit $a$ and $\tau_R$.
+          Canonical lithosphere ($H=10$ km, $E=40$ GPa) implies
+          $\eta \approx 3.5\times10^{18}$ Pa$\cdot$s.}
+      \end{figure}
+  \end{columns}
+\end{frame}
+
+% ================================================================
+\begin{frame}{Summary \& Conclusions}
+  \begin{columns}
+    \column{0.55\textwidth}
+      \begin{enumerate}
+        \item We derive a \textbf{fully analytical, cyclic model} for inter-rifting
+              strain based on fractional (half-Laplacian) diffusion.
+        \item The \textbf{CSS solution} (Digamma / log-Gamma functions) guarantees
+              consistency with far-field plate motion by construction.
+        \item A single parameter $a = EH/[2\eta(1-\nu^2)]$ controls the
+              spatial breadth of deformation.
+        \item \textbf{Fits to Iceland GPS} (Foulger 1992) yield
+              $a \approx 4.8\times10^{-5}$ m/s and, in the Maxwell model,
+              $\tau_R \approx 1.9$ yr $\Rightarrow$ $\eta \sim 3.5\times10^{18}$ Pa$\cdot$s.
+        \item The CSS step model \textbf{outperforms} classical diffusion kernels
+              without requiring unphysical far-field boundary conditions.
+      \end{enumerate}
+
+    \column{0.42\textwidth}
+      \begin{alertblock}{Take-home message}
+        Inter-rifting deformation is the \emph{superposition} of viscous
+        responses from an infinite history of discrete dike events.
+        The ``steady'' interseismic signal is not steady at all --- it is
+        the emergent, periodic sum of transients.
+      \end{alertblock}
+  \end{columns}
+\end{frame}
+
+\end{document}

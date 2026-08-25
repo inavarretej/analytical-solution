@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -c '\\\\$b\\\\b\\\\|\\\\$2b\\\\b\\\\|b_j\\\\b' /Users/ivannavarretejara/Work/Code/Analytical-Solution/tex/paper/paper_v2.tex)",
+      "WebFetch(domain:www.academia.edu)",
+      "Bash(grep -n \"[A-Z][a-z]* et al\\\\.\\\\|[A-Z][a-z]* and [A-Z][a-z]*,\\\\s*[0-9]\\\\{4\\\\}\\\\|[A-Z][a-z]* \\([0-9]\\\\{4\\\\}\\)\" /Users/ivannavarretejara/Work/Code/Analytical-Solution/tex/paper/paper_v2.tex)",
+      "Bash(pdflatex -interaction=nonstopmode paper_v2.tex)",
+      "Bash(latexmk -pdf -interaction=nonstopmode -cd /Users/ivannavarretejara/Work/Code/Analytical-Solution/tex/paper/paper_v2.tex)",
+      "Bash(latexmk -g -pdf -interaction=nonstopmode paper_v2.tex)"
+    ]
+  }
+}

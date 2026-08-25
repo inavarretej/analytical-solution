@@ -1,0 +1,8 @@
+.DS_Store
+.superpowers/
+.claude/settings.local.json
+fig/
+data/
+matlab/
+docs/
+
