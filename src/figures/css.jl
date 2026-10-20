@@ -8,18 +8,14 @@ include("../models/maxwell.jl")
 # x̂ = x/(aT),  τ̂ = τ/T ∈ [0,1),  u normalised by b,  v normalised by b/T
 a_d  = 1.0;  T_d = 1.0;  b_d = 1.0;  vp_d = b_d / T_d
 
-x_hat = collect(range(0.05, 5.0, length = 400))
+x_hat = collect(range(0, 5.0, length = 400))
 
-# ── Panel (a): CSS velocity at several inter-rifting phases ───────────────────
-tau_hats   = [0.1, 0.3, 0.5, 0.9]
-phase_cols = [:royalblue, :darkorange, :forestgreen, :firebrick]
-phase_labels = [L"\hat{\tau} = 0.1", L"\hat{\tau} = 0.3",
-                L"\hat{\tau} = 0.5", L"\hat{\tau} = 0.9"]
+# The RSS-velocity-vs-phase panel (locked width at aT across tau_hat) was
+# dropped: that transition is already shown in Figure~\ref{fig:viscous_halfspace}
+# (fig_halfspace_step_cycle.png), so this figure now focuses solely on the
+# convergence-with-N-cycles result below.
 
-v_css_norm(x̂, τ̂) =
-    get_v_css(x̂ * a_d * T_d, τ̂ * T_d, b_d, vp_d, a_d) * T_d / b_d
-
-# ── Panel (b): convergence of finite velocity sum to CSS at τ̂ = 0.5 ──────────
+# Convergence of finite velocity sum to CSS at τ̂ = 0.5.
 # Velocity (not displacement) converges: each past dike's velocity decays as 1/t.
 τ̂_conv = 0.5
 
@@ -30,34 +26,19 @@ end
 
 v_css_norm_conv(x̂, τ̂) = get_v_css(x̂, τ̂, b_d, vp_d, a_d)  # already normalised
 
-Ns     = [1, 3, 10]
-conv_cols   = [:royalblue, :darkorange, :forestgreen]
-conv_labels = ["N = 1", "N = 3", "N = 10"]
+Ns     = [1, 3, 10, 100]
+conv_cols   = [:royalblue, :darkorange, :forestgreen, :red]
+conv_labels = ["N = 1", "N = 3", "N = 10", "N = 100"]
 
 mkpath("fig")
 
 # ── Figure layout ─────────────────────────────────────────────────────────────
-fig2 = Figure(size = (800, 1680), fontsize = 20)
+fig2 = Figure(size = (800, 840), fontsize = 30)
 
-ax21 = Axis(fig2[1, 1],
-    xlabel = L"\hat{x} = x/(aT)",
-    ylabel = L"v_{\mathrm{CSS}} \cdot T / \omega",
-    title  = "(a)  CSS velocity — inter-rifting evolution",
-    limits = (0, 5, 0, nothing))
-
-for (τ̂, col, lbl) in zip(tau_hats, phase_cols, phase_labels)
-    v_vals = v_css_norm.(x_hat, τ̂)
-    lines!(ax21, x_hat, v_vals, color = col, linewidth = 2.5, label = lbl)
-end
-
-# Reference: time-averaged CSS velocity = ω/(aT²) → normalised = 1/aT = 1 here
-# (not plotted, for context only)
-axislegend(ax21, position = :rt, framevisible = true, labelsize = 18)
-
-ax22 = Axis(fig2[2, 1],
-    xlabel = L"\hat{x} = x/(aT)",
-    ylabel = L"v \cdot T / \omega",
-    title  = L"(b)  Convergence of velocity sum to CSS ($\hat{\tau} = 0.5$)",
+ax22 = Axis(fig2[1, 1],
+    xlabel = L"\xi = x/(aT)",
+    ylabel = L"v \cdot T / b",
+    title  = L"Convergence of velocity sum to RSS ($\tau/T = 0.5$)",
     limits = (0, 5, 0, nothing))
 
 for (N, col, lbl) in zip(Ns, conv_cols, conv_labels)
@@ -67,13 +48,15 @@ end
 
 v_css_vals = v_css_norm_conv.(x_hat, τ̂_conv)
 lines!(ax22, x_hat, v_css_vals, color = :black, linewidth = 2.5,
-       linestyle = :dash, label = "CSS  (N → ∞)")
+       linestyle = :dash, label = "RSS  (N → ∞)")
 
-# Far-field plate velocity reference: v·T/ω → 1 as x̂ → ∞
-hlines!(ax22, [1.0], color = (:gray, 0.4), linewidth = 1.5, linestyle = :dot)
-text!(ax22, 4.4, 1.03; text = L"v_{\mathrm{plate}}", fontsize = 15, color = :gray)
+# Far-field plate velocity reference: v·T/ω → 1/2 as x̂ → ∞ (each flank
+# carries half the plate rate; see vault note "Factor-of-2 error in the EV
+# RSS velocity formula").
+hlines!(ax22, [0.5], color = (:gray, 0.4), linewidth = 1.5, linestyle = :dot)
+text!(ax22, 4.4, 0.53; text = L"v_{\mathrm{plate}}/2", fontsize = 22.5, color = :gray)
 
-axislegend(ax22, position = :rb, framevisible = true, labelsize = 18)
+axislegend(ax22, position = :rb, framevisible = true, labelsize = 27)
 
 save("fig/fig_css_behavior.png", fig2)
 println("fig/fig_css_behavior.png  saved")

@@ -9,10 +9,14 @@ E_min    = 20e9
 E_max    = 80e9
 H_ref_km = 10.0
 
-# ── Best-fit a and 1σ bounds (from fig_chi2_landscape_asal.jl, zoomed grid) ──
-a_opt   = 9.503e-6   # m/s  — best fit
-a_1σ_lo = 9.13e-6    # m/s  — lower 1σ edge → largest η
-a_1σ_hi = 9.89e-6    # m/s  — upper 1σ edge → smallest η
+# ── Best-fit a and 1σ bounds ─────────────────────────────────────────────────
+# From src/figures/asal_css_v_constrained.jl / asal_chi2_landscape_v_constrained.jl:
+# EV RSS, joint time series + profile, T = b/V (V = 13 mm/yr); 1σ = Δχ² ≤ 2.30
+# projected onto a. (Previously a* = 9.503e-6, 1σ 9.13–9.89e-6, from the older
+# fixed-T = 500 yr fit.)
+a_opt   = 1.0006e-5  # m/s  — best fit
+a_1σ_lo = 9.66e-6    # m/s  — lower 1σ edge → largest η
+a_1σ_hi = 1.04e-5    # m/s  — upper 1σ edge → smallest η
 
 # ── Iso-a/E curves: H(η) = 2aη(1−ν²)/E ──────────────────────────────────────
 η_log  = collect(range(17.0, 21.0, length = 800))
@@ -50,7 +54,7 @@ println("  1σ combined   = [$(round(η_comb_lo, sigdigits=3)), $(round(η_comb_
 println("  σ(log10 a) = $(round(σ_a, digits=3))   σ(log10 E) = $(round(σ_E, digits=3))   →  E uncertainty dominates")
 
 # ── Figure ────────────────────────────────────────────────────────────────────
-fig = Figure(size = (1000, 700), fontsize = 20)
+fig = Figure(size = (1000, 700), fontsize = 37.5)
 
 ax = Axis(fig[1, 1],
     xlabel  = L"\eta\ \ (\mathrm{Pa\cdot s})",
@@ -69,7 +73,7 @@ band!(ax, η_log, clip(H_in_lo), clip(H_in_hi), color = (:royalblue, 0.35))
 # Best-fit iso-a line
 lines!(ax, η_log, clip(H_best),
     color = :royalblue, linewidth = 2.5,
-    label = L"a^* = 9.50\times10^{-6}\ \mathrm{m\,s^{-1}}")
+    label = L"a^* = %$(round(a_opt*1e5, digits=2))\times10^{-5}\ \mathrm{m\,s^{-1}}")
 
 # Bounding dashed lines for inner band
 lines!(ax, η_log, clip(H_in_lo),
@@ -81,7 +85,7 @@ lines!(ax, η_log, clip(H_in_hi),
 hlines!(ax, [H_ref_km],
     color = (:black, 0.45), linewidth = 1.5, linestyle = :dash)
 text!(ax, 17.08, 10.8;
-    text = L"H = 10\ \mathrm{km}", fontsize = 14, color = :black)
+    text = L"H = 10\ \mathrm{km}", fontsize = 26.25, color = :black)
 
 # Best-fit η point
 scatter!(ax, [log10(η_best_pt)], [H_ref_km],
@@ -96,15 +100,15 @@ errorbars!(ax,
 
 # Annotation for best-fit
 text!(ax, log10(η_best_pt), 11.2;
-    text  = L"2.2\times10^{19}",
-    color = :royalblue, fontsize = 14, align = (:center, :bottom))
+    text  = L"%$(round(η_best_pt/1e19, digits=1))\times10^{19}",
+    color = :royalblue, fontsize = 26.25, align = (:center, :bottom))
 
 # Nooner (2009) — Dabbahu, Afar: η = 5.2×10¹⁸ Pa·s, H = 13.2 km
 scatter!(ax, [log10(5.2e18)], [13.2],
     color = :forestgreen, markersize = 12, marker = :diamond, strokewidth = 0)
 text!(ax, log10(5.2e18) + 0.06, 14.0;
     text  = "Nooner (2009)\nDabbahu, Afar",
-    color = :forestgreen, fontsize = 12, align = (:left, :bottom))
+    color = :forestgreen, fontsize = 22.5, align = (:left, :bottom))
 
 # Hamling et al. (2014) — REMOVED pending PDF verification
 
@@ -122,7 +126,7 @@ errorbars!(ax,
     direction = :x, color = :crimson, linewidth = 2.0, whiskerwidth = 8)
 text!(ax, η_wright_hi + 0.06, H_wright;
     text  = "Wright et al. (2012)\nDabbahu, Afar",
-    color = :crimson, fontsize = 12, align = (:left, :center))
+    color = :crimson, fontsize = 22.5, align = (:left, :center))
 
 # Cattin et al. (2005) — Asal-Ghoubbet: near-axis effective viscosity from 2D
 # thermo-mechanical FEM model of post-1978 relaxation.
@@ -139,14 +143,14 @@ poly!(ax,
     strokecolor = :darkorange, strokewidth = 1.8)
 text!(ax, (η_cat_lo + η_cat_hi) / 2, H_cat_hi + 0.7;
     text  = "Cattin et al. (2005)\nAsal, near-axis",
-    color = :darkorange, fontsize = 12, align = (:center, :bottom))
+    color = :darkorange, fontsize = 22.5, align = (:center, :bottom))
 
 # Shading note
 text!(ax, 20.7, 1.5;
     text  = "dark: 1σ in a  (E = 40 GPa) |  light: combined (a + E ∈ [20, 80] GPa)",
-    color = (:gray, 0.70), fontsize = 12, align = (:right, :bottom))
+    color = (:gray, 0.70), fontsize = 22.5, align = (:right, :bottom))
 
-axislegend(ax, position = :lt, framevisible = true, labelsize = 15)
+axislegend(ax, position = :lt, framevisible = true, labelsize = 28.12)
 
 save("fig/fig_rheology_1sigma_asal.png", fig)
 println("Saved  fig/fig_rheology_1sigma_asal.png")

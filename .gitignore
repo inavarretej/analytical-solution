@@ -1,8 +1,12 @@
 .DS_Store
 .superpowers/
-.claude/settings.local.json
+.claude/
 fig/
 data/
 matlab/
 docs/
-
+reports/
+notebooks/
+tex/slides
+cache/
+CLAUDE.md
