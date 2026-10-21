@@ -36,7 +36,7 @@ mkpath("fig")
 fig2 = Figure(size = (800, 840), fontsize = 30)
 
 ax22 = Axis(fig2[1, 1],
-    xlabel = L"\xi = x/(aT)",
+    xlabel = L"x/(aT)",
     ylabel = L"v \cdot T / b",
     title  = L"Convergence of velocity sum to RSS ($\tau/T = 0.5$)",
     limits = (0, 5, 0, nothing))
@@ -54,7 +54,7 @@ lines!(ax22, x_hat, v_css_vals, color = :black, linewidth = 2.5,
 # carries half the plate rate; see vault note "Factor-of-2 error in the EV
 # RSS velocity formula").
 hlines!(ax22, [0.5], color = (:gray, 0.4), linewidth = 1.5, linestyle = :dot)
-text!(ax22, 4.4, 0.53; text = L"v_{\mathrm{plate}}/2", fontsize = 22.5, color = :gray)
+text!(ax22, 4.4, 0.53; text = L"V/2", fontsize = 22.5, color = :gray)
 
 axislegend(ax22, position = :rb, framevisible = true, labelsize = 27)
 

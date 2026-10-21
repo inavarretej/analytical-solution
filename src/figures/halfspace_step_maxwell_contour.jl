@@ -60,6 +60,7 @@ function generate_step_maxwell_contour_figure(; orientation::Symbol = :vertical,
         vel_nondim = vel_nondim_step, vel_symbol = "(b/τ_R)",
         disp_nondim = disp_nondim_step, disp_symbol = "b", u_lim = 2.0, vel_lim = 2.0,
         length_scale = H, length_symbol = "H", guide_formula = nothing,
+        time_symbol = "t",
         color_min = color_min_step, color_max = color_max_step, ref_speed = 0.01, colorscale = log10,
         hvx = halfspace_vx_capped, hvz = halfspace_vz_capped,  # dashed guide at a*tau, as in Fig. 3
         cache_prefix = "step_maxwell_contour")  # resume from cache/ after an interruption

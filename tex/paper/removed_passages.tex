@@ -1,0 +1,53 @@
+% Passages removed from paper.tex on 2026-10-21 (they were commented out).
+% Kept here for reference; not \input by paper.tex.
+
+% --------------------------------------------------------------------
+% From Section 2.1 (sec:setup), after the Stokes kernel, eq. (stokes).
+% Comparison with the closure of Foulger et al. (1992).
+% --------------------------------------------------------------------
+% \citet{foulger1992post} start from the same force balance but close it
+% differently. Rather than coupling the elastic layer to an infinite viscous
+% half-space through the non-local Stokes kernel (\ref{eq:stokes}), they place
+% a viscous channel of finite thickness $H_v$ over a rigid base. Its basal
+% traction is then treated as local, simple-shear drag,
+% $\sigma_{xz}^{\mathrm{BOT}} \sim (\eta/H_v)\,\partial u/\partial t$, in place
+% of the convolution in (\ref{eq:stokes}). Substituted into (\ref{eq:equil}),
+% this closure collapses the governing equation to an ordinary, Fickian
+% diffusion equation for the surface displacement, $\partial u/\partial t =
+% \kappa\,\partial^2 u/\partial x^2$. The diffusivity $\kappa \propto E H
+% H_v/\eta$ this introduces aggregates the elastic-layer properties with the
+% assumed viscous-channel thickness $H_v$, rather than constraining a
+% half-space viscosity directly. Reproducing a given deformation pattern
+% therefore requires an a priori choice of $H_v$ at each site -- the
+% limitation already noted in Section~\ref{sec:intro}. Section~\ref{sec:fourier}
+% derives what the non-local closure (\ref{eq:stokes}) yields in its place: an
+% infinite half-space, rather than a finite channel, replaces the ordinary
+% Laplacian of Foulger et al.'s diffusion equation with the half-order
+% fractional Laplacian $(-\Delta)^{1/2}$ of Equation~\ref{eq:fractional}. The
+% two models therefore differ in the order of the governing diffusion
+% equation itself, not only in its diffusivity.
+
+% --------------------------------------------------------------------
+% From Section 2.2 (sec:fourier), after eq. (fractional).
+% Harmonic-extension (Caffarelli--Silvestre) origin of the half-order operator.
+% --------------------------------------------------------------------
+% This order is not a modelling choice. The fractional Laplacian admits a
+% representation as a Dirichlet-to-Neumann map for a harmonic extension
+% problem into an auxiliary half-space, weighted by $y^{1-2s}$; the weight
+% vanishes, and the extension becomes the ordinary Laplace equation, only at
+% $s=1/2$ \citep{caffarelli2007extension,daoud2022fractional}. That is the
+% same half-space potential problem generating the Stokes kernel itself, so
+% the half-order non-locality in (\ref{eq:fractional}) is forced by the
+% geometry of the elastic-plate--viscous-half-space coupling, not fitted to
+% the data. Solving the full two-dimensional Stokes flow beneath the plate,
+% governed by the biharmonic rather than the harmonic equation, still
+% recovers the same interface operator $-2\eta(-\Delta)^{1/2}$ exactly once
+% the interface stress is extracted.
+
+% --------------------------------------------------------------------
+% From Section 2.2 (sec:fourier), after the previous block.
+% --------------------------------------------------------------------
+% This contrasts with classical Fickian diffusion: the half-order operator, a
+% direct consequence of the non-local Stokes kernel, produces Lorentzian rather
+% than Gaussian spatial profiles, with tails that decay as $1/x$ rather than
+% exponentially.

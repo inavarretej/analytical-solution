@@ -94,7 +94,7 @@ The other files in `data/` (Natron velocities and faults, earlier digitizations)
 | `rheology_1sigma_krafla.jl` | `fig_rheology_1sigma.png` | Fig. 12 | Krafla iso-`a` trade-off in (H, η), with literature viscosities. Best-fit `a` and 1σ range written in the script. |
 | `rheology_1sigma_asal.jl` | `fig_rheology_1sigma_asal.png` | Fig. 13 | Same for Asal. |
 | `css_width.jl` | `fig_css_width.png` | Fig. 14 | Deformation half-width `aT` against `T` for both sites, with network apertures. |
-| `stochastic_css.jl` | `fig_stochastic_css.png` | Fig. 15 | RSS under stochastic recurrence: random openings (contrast), coupled `b_j = V T_j`, random dike position, and coupled + position. |
+| `stochastic_css.jl` | `fig_stochastic_css.png` | Fig. 15 | RSS under stochastic recurrence: random openings (uncoupled), coupled `b_j = V T_j`, random dike position, and coupled + position. |
 
 Shared include files: `halfspace_common.jl` (grid, phases, plotting routine and cached interior fields for Figs. 3, 6, 8, 9) and `asal_v_constrained_common.jl` (Asal data, forward models, χ² and the `T ≥ 37.2 yr` floor).
 
@@ -107,7 +107,7 @@ These scripts produce numbers quoted in the manuscript or files read by the figu
 | `krafla_css_v_constrained.jl` | `reports/krafla_css_v_constrained_params.csv` | Seed for `krafla_v_constrained_combined.jl`. |
 | `asal_css_v_constrained.jl` | `reports/asal_css_v_constrained_params.csv`, `reports/asal_css_v_constrained_report.txt` | Asal best fits (Table 1), read by the Asal figure and landscape scripts. |
 | `asal_chi2_landscape_v_constrained.jl` | `reports/asal_chi2_landscape_v_constrained.txt` | Asal 1σ ranges (Table 1). |
-| `krafla_hofton_diffusion.jl` | console output | Joint refit of the diffusion model at Krafla (Discussion: κ = 2.70 m² s⁻¹, b = 2.81 m, χ²_r = 4.90). |
+| `krafla_hofton_diffusion.jl` | console output | Joint refit of the diffusion model at Krafla (Section 4.1 and Table 1: κ = 2.70 m² s⁻¹, b = 2.81 m, c = 6.4 cm, χ²_r = 4.90). |
 
 ### Run order for the fits
 

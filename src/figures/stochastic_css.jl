@@ -103,7 +103,7 @@ cases = [
 
 for (row, lo, hi, med, color, title, inset) in cases
     ax = Axis(fig[row, 1],
-        xlabel = row == 4 ? L"\xi = x/(aT)" : "",
+        xlabel = row == 4 ? L"x/(aT)" : "",
         ylabel = L"v \cdot T / b",
         title  = title,
         limits = (-5, 5, -0.95, 1.1))

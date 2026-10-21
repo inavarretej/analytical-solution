@@ -196,6 +196,7 @@ function plot_model_rows!(fig, taus, labels, make_V, make_U;
         ref_speed, colorscale = identity,
         hvx::Function = halfspace_vx, hvz::Function = halfspace_vz,
         guide_length_fn::Function = tau -> a_nom * tau,
+        time_symbol::AbstractString = "τ",
         cache_prefix = nothing)
     # hvx/hvz: interior-field kernels used by the :contour panels (the EVE
     # scripts pass maxevals-capped versions; the uncapped defaults hang on the
@@ -405,8 +406,8 @@ function plot_model_rows!(fig, taus, labels, make_V, make_U;
         # applies to every phase, so stating it once is enough.
         ax1 = Axis(fig[profile_pos(i)...],
             xlabel = "x / $length_symbol", ylabel = "v_x / $vel_symbol",
-            title  = guide_formula === nothing ? "τ = $lab" :
-                "τ = $lab   (L/$length_symbol = $guide_formula = $(round(L / length_scale, sigdigits = 3)))",
+            title  = guide_formula === nothing ? "$time_symbol = $lab" :
+                "$time_symbol = $lab   (L/$length_symbol = $guide_formula = $(round(L / length_scale, sigdigits = 3)))",
             limits = ((-x_span_m / length_scale, x_span_m / length_scale), (-vel_lim, vel_lim)))
         hlines!(ax1, [0.0], color = (:gray, 0.4), linestyle = :dot)
         hlines!(ax1, [1.0], color = (:gray, 0.4), linestyle = :dot)

@@ -45,6 +45,7 @@ function generate_step_contour_figure(; orientation::Symbol = :vertical, fontsiz
         vel_nondim = vel_nondim_step, vel_symbol = "(b/τ_R)",
         disp_nondim = disp_nondim_step, disp_symbol = "b", u_lim = 2.0, vel_lim = 2.0,
         length_scale = H, length_symbol = "H", guide_formula = nothing,
+        time_symbol = "t",
         color_min = color_min_step, color_max = color_max_step, ref_speed = 0.01, colorscale = log10)
     out_path = "fig/fig_halfspace_step_contour$(orientation_suffix(orientation)).png"
     save(out_path, fig_step, px_per_unit = 2)

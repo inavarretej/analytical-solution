@@ -46,60 +46,65 @@
 \begin{summary}
 Inter-rifting deformation, the strain that accumulates between discrete
 magmatic episodes, is the least-constrained phase of the rifting cycle. We
-model it as the superposed relaxation of a long history of discrete dike
-intrusions in an elastic plate overlying a Newtonian viscous half-space.
+model it as the superposed relaxation of periodic dike intrusions in an
+elastic plate overlying a Newtonian viscous half-space.
 The non-local coupling of the plate to the half-space turns post-diking
-relaxation into a fractional diffusion governed by the half-Laplacian and
-by a single characteristic velocity $a = EH/[2\eta(1-\nu^2)]$, where $E$,
+relaxation into a fractional diffusion governed by the half-Laplacian. A
+single characteristic velocity, $a = EH/[2\eta(1-\nu^2)]$, controls this
+diffusion, where $E$,
 $H$ and $\nu$ are the Young's modulus, thickness and Poisson's ratio of the
 plate and $\eta$ is the viscosity of the half-space. Deformation spreads
-from the rift at the constant speed $a$ with a $1/x$ tail, and Fickian
-diffusion is the same relaxation evaluated at a single diffusion time.
-Periodic intrusions converge to a recurrent steady state with a closed
-form in the Digamma and log-Gamma functions. This state conserves the
-opening of each intrusion over one cycle and has a single length scale,
-the deformation half-width $aT$, where $T$ is the recurrence interval.
-Far-field plate divergence therefore emerges without boundary conditions,
-and steady far-field velocities record the memory of past intrusions
-rather than continuous creep at depth. A Maxwell visco-elastic half-space
-with the elastic modulus of the plate modifies this response only within
-about $1.3\,H$ of the axis and during the first few relaxation times.
-Applied to post-rifting records from Krafla, Iceland, and Asal, Djibouti,
-with $T$ derived from the fitted dike opening and a long-term rift opening
-rate, the model favours a viscous over a visco-elastic half-space and
-constrains the ratio $EH/\eta$ at both sites. Irregular recurrence,
-openings and dike positions spread individual velocity profiles around the
-steady state with little bias.
+from the rift at the constant speed $a$ with a $1/x$ tail. This
+solution is an average of Fickian diffusion profiles over a heavy-tailed
+distribution of diffusion times, of which the Fickian model retains only
+one. Periodic intrusions converge to a recurrent steady state (RSS) with a
+closed form in the Digamma and log-Gamma functions. Over each cycle the
+two flanks separate by exactly one dike opening, so the far field diverges
+at the long-term opening rate without lateral boundary conditions, and the
+deformation half-width $aT$, where $T$ is the recurrence interval, is the
+only length scale. A Maxwell visco-elastic half-space with the shear
+modulus of the plate modifies this response only within about $1.3\,H$ of
+the axis and during the first few relaxation times. We fit post-rifting
+records from Krafla, Iceland, and Asal, Djibouti, deriving $T$ from the
+fitted dike opening and a long-term rift opening rate. At both sites the
+viscous half-space fits better than the visco-elastic one, strongly so at
+Asal ($\Delta\mathrm{AIC} = 70$), whose record starts early in the
+relaxation. For $H = 10$~km and $E = 40$~GPa, the fits imply
+$\eta \approx 4\times10^{18}$~Pa~s at Krafla and
+$2\times10^{19}$~Pa~s at Asal, with an uncertainty dominated by $E$. At
+Krafla, the RSS also fits better than Fickian diffusion ($\chi^2_r = 1.6$
+against 4.9). Irregular recurrence, openings and dike positions spread
+individual velocity profiles around the RSS with little bias in their
+median.
 \end{summary}
 
 \begin{keywords}
-continental rifting; inter-rifting deformation; fractional diffusion;
-visco-elastic relaxation; GPS geodesy; Iceland
+Transient deformation; Rheology: crust and lithosphere; Continental
+tectonics: extensional; Satellite geodesy; Africa; Iceland
 \end{keywords}
 
 % ====================================================================
 \section{Introduction}
 \label{sec:intro}
 
-Continental rifting occurs at divergent plate boundaries, which drive the
-transition from stable lithosphere to active oceanic spreading through
-rifting cycles that span a broad range of spatial and temporal scales
-\citep{corti2009continental,ebinger2013rifting}. These cycles alternate
-between discrete rifting events and the inter-rifting periods that
-separate them. Each event comprises two phases: elastic strain release
+The build-up of extensional strain between discrete rifting events is the
+least-constrained phase of the rifting cycle at divergent plate boundaries.
+Continental rifting drives the transition from stable lithosphere to
+oceanic spreading through rifting cycles that span a broad range of
+spatial and temporal scales \citep{corti2009continental,ebinger2013rifting}.
+These cycles alternate between discrete rifting events and the
+inter-rifting periods that separate them. Each event comprises two phases: elastic strain release
 through dike emplacement and normal faulting
 \citep{grandin2011seismicity,maccaferri2016time}, followed by post-diking
 visco-elastic relaxation that decays on timescales of years to decades
 \citep{foulger1992post,nooner2009post}. Secular plate divergence, set by
 large-scale mantle dynamics \citep{saria2014present,stamps2021redefining},
-persists throughout the cycle: it dominates strain accumulation during
+persists throughout the cycle. It dominates strain accumulation during
 inter-rifting periods and is superposed on the rapid deformation of
 rifting events. Geodetic campaigns in Iceland
 \citep{heki1993plate,hofton1995horizontal} and the Afar
 \citep{vigny2007twenty,nooner2009post,grandin2011seismicity} have
-documented the two event phases in considerable detail. The mechanisms
-governing the build-up of extensional strain between discrete events,
-however, remain the least-constrained aspect of the rifting cycle.
+documented the two event phases in detail.
 
 Models of the inter-rifting phase conventionally borrow kinematic
 frameworks developed for the interseismic earthquake cycle. The standard
@@ -112,7 +117,7 @@ rift as a tensile dislocation in an elastic half-space that opens
 continuously at a depth-dependent rate \citep{lafemina2005geodetic,konca2018slip},
 or prescribe a basal shear traction at the base of the plate to mimic
 far-field plate forcing \citep{ali2014geodetic}. These models
-share a fundamental physical inconsistency: they ignore the rheological
+all ignore the rheological
 transition at the brittle--ductile boundary of magmatic rifts, where high
 heat flow and partial melt weaken the lower crust and uppermost mantle
 \citep{prodehl1997east,plasman2017lithospheric}. Geodetic and seismic
@@ -122,31 +127,33 @@ asthenospheric viscosity ($\eta\approx1$--$5\times10^{18}$~Pa~s) implies
 Maxwell relaxation times of a few years \citep{hofton1996post,nooner2009post},
 far shorter than the inter-rifting interval and incompatible with the
 purely elastic response assumed by backslip models. A continuously opening
-dislocation is equally problematic:
+dislocation is also inconsistent with observations, because
 dike intrusions are finite, discrete events, and the geodetic record shows
-that each episode is followed by a localized transient decaying within a
+that each episode is followed by a localised transient decaying within a
 few years \citep{foulger1992post,reiss2022shallow}.
 
-Models of the post-diking transient itself meet a related obstacle from
-two directions. Analytical approaches, exemplified by the diffusion model
+Analytical and numerical models of the post-diking transient itself meet
+a related obstacle. Analytical approaches, exemplified by the diffusion model
 of \citet{foulger1992post}, reproduce the broad deformation pattern after
 individual intrusions, but they require an a priori viscous layer
 thickness, and their solutions return to a constant level far from the
-rift (Figure~\ref{fig:hofton_diffusion}). The observed profiles already
-capture the transition from post-rifting relaxation to steady
+rift (Fig.~\ref{fig:hofton_diffusion}). The observed profiles already
+capture the transition from post-diking relaxation to steady
 inter-rifting divergence. Twelve to seventeen years after the onset of
 rifting, the displacement field traces a broad, arctangent-like shape
-rather than a transient confined to the rift, and in the profile of
+that extends well beyond the rift, and in the profile of
 \citet{hofton1996post} the two ends of the traverse settle onto distinct
-levels instead of a common one (Figure~\ref{fig:hofton_diffusion}b).
-Numerical visco-elastic simulations
-\citep{hofton1995horizontal,hofton1996post,nooner2009post} face an
-equivalent difficulty: in any finite domain, velocities must vanish at the
-lateral boundaries, which cannot be reconciled with the steady plate
+levels (Fig.~\ref{fig:hofton_diffusion}b).
+In numerical visco-elastic simulations
+\citep{hofton1995horizontal,hofton1996post,nooner2009post}, the lateral
+boundaries of the finite domain must either force the far-field velocity
+to zero or prescribe the divergence rate that the model should predict.
+A zero far-field velocity cannot be reconciled with the steady plate
 divergence observed in global reference frames
-\citep{fernandes2004defining,altamimi2016itrf2014}. The result is a kinematic gap between the
-transient post-diking signal and the secular strain rates of global plate
-motion models \citep{kreemer2014geodetic,stamps2018virtual}.
+\citep{fernandes2004defining,altamimi2016itrf2014}. Neither class of
+model connects the transient post-diking signal to the secular
+strain rates of global plate motion models
+\citep{kreemer2014geodetic,stamps2018virtual}.
 
 \begin{figure*}
   \centering
@@ -168,57 +175,55 @@ motion models \citep{kreemer2014geodetic,stamps2018virtual}.
     ($U_0 = 1.27 \pm 0.14$~m) and $\kappa = 3.11 \pm 0.68$~m$^2$~s$^{-1}$.
     The zero reference of profile (b) is arbitrary \citep{hofton1996post},
     so its curve is shifted by the constant 6.7~cm read from their
-    Figure~16, not fitted. Both curves return to a single constant level far
-    from the rift, whereas the far-field stations of (b) settle on distinct
-    levels on the two flanks, below the curve to the west and above it to
-    the east.}
+    Figure~16, not fitted.}
   \label{fig:hofton_diffusion}
 \end{figure*}
 
 The theoretical foundations laid for cyclic strike-slip fault deformation
-\citep{nur1974postseismic,savage1978asthenosphere,spence1979magma,cohen1984crustal} suggest a different perspective, which we adopt here: inter-rifting
-deformation is not a distinct physical process but the emergent
-superposition of visco-elastic responses to an infinite history of discrete
-dike intrusions. Under this view, the apparent steadiness of inter-rifting velocities arises
-naturally from the time-averaging of decaying transients, with no need for
-a continuously creeping source.
+\citep{nur1974postseismic,savage1978asthenosphere,spence1979magma,cohen1984crustal}
+motivate the view we adopt here. We treat inter-rifting deformation as the
+superposition of visco-elastic responses to an infinite history of
+discrete dike intrusions. The steadiness of inter-rifting velocities then
+results from the time-averaging of decaying transients, and requires no
+continuously creeping source.
 
-We develop an analytical model for an elastic crust overlying a viscous
-half-space \citep{hetland2006thesis} in which dike intrusions recur periodically at
+We develop an analytical model, the elastic--viscous (EV) model, for an
+elastic plate overlying a viscous half-space \citep{hetland2006thesis} in
+which dike intrusions recur periodically at
 interval $T$ and each open the rift by $b$, the dike opening. The governing
 integro-differential equation reduces, after a Fourier transform, to a
-fractional diffusion equation \citep{metzler2000random,samko1993integration} parameterized by a single characteristic velocity
+fractional diffusion equation \citep{metzler2000random,samko1993integration} parameterised by a single characteristic velocity
 $a = EH/[2\eta(1-\nu^2)]$. In the limit of many repeated intrusions, the
-system reaches a Recurrent Steady State (RSS) expressed exactly through the
-Digamma and log-Gamma functions, which satisfies the far-field plate
-divergence constraint by construction. We then extend the model to a
-Maxwell visco-elastic half-space via the elastic--visco-elastic
-correspondence principle \citep{hetland2005postseismic,barbot2010unified}, recovering two physically distinct relaxation regimes separated by
+system reaches a Recurrent Steady State (RSS) with a closed form in the
+Digamma and log-Gamma functions, whose two flanks diverge far from the
+rift at the long-term opening rate. We then extend the model to a
+Maxwell visco-elastic half-space, the elastic--visco-elastic (EVE) model,
+via the correspondence principle \citep{hetland2005postseismic,barbot2010unified}, recovering two physically distinct relaxation regimes separated by
 the Maxwell timescale $\tau_R = \eta/\mu_m$. We apply both models to two
-geodetic datasets: horizontal displacement profiles from the Krafla rift,
-Iceland, recorded 12--17 years after the onset of the 1975--1984 rifting
-sequence \citep{foulger1992post,hofton1996post}, and a 25-year baseline
-time series together with a rift-perpendicular velocity profile from the
-Asal rift, Djibouti \citep{vigny2007twenty}. Together, these records
-constrain the asthenospheric viscosity of two contrasting settings, show
-when a geodetic record can distinguish a viscous from a visco-elastic
-half-space, and show that the decadal post-rifting transient and secular
-plate divergence are the short- and long-term expressions of a single
-process.
+geodetic datasets. At the Krafla rift, Iceland, horizontal displacement
+profiles were recorded 12--17 years after the onset of the 1975--1984
+rifting sequence \citep{foulger1992post,hofton1996post}. At the Asal
+rift, Djibouti, a 25-year baseline time series is complemented by a
+rift-perpendicular velocity profile \citep{vigny2007twenty}. We use these records to
+constrain the viscosity of the half-space at both sites and to identify when
+a geodetic record can distinguish a viscous from a visco-elastic
+half-space.
 
 % ====================================================================
-\section{Elastic-viscous (EV) model}
+\section{Elastic--viscous (EV) model}
 \label{sec:model}
 
 \subsection{Physical setup and governing equations}
 \label{sec:setup}
 
-The model represents the lithosphere as a coupled mechanical system: a thin elastic plate of thickness $H$ (the seismogenic crust) overlying a
-Newtonian viscous half-space of viscosity $\eta$ representing the asthenosphere \citep[e.g.,][]{hetland2005postseismic,hetland2006thesis}. The horizontal 
+The model represents the lithosphere as a coupled mechanical system: a thin elastic plate of thickness $H$, which represents the brittle upper
+crust, overlying a Newtonian viscous half-space of viscosity $\eta$, which
+represents the ductile lower crust and uppermost mantle
+\citep[e.g.,][]{hetland2005postseismic,hetland2006thesis}. The horizontal 
 coordinate $x$ is perpendicular to the rift axis; the vertical coordinate $z$ is oriented downward, with the free surface at $z = 0$ 
-and the crust--mantle interface at $z = H$. We consider only the horizontal component of surface displacement; the vertical (uplift) field, although
+and the base of the plate at $z = H$. We consider only the horizontal component of surface displacement; the vertical (uplift) field, although
 part of the geodetic record \citep{hofton1996post,nooner2009post}, lies outside the scope of this model. Under plane-strain conditions with negligible 
-vertical stress ($\sigma_{zz}\approx 0$), the depth-averaged horizontal stress in the elastic layer is related to the horizontal surface displacement 
+vertical stress ($\sigma_{zz}\approx 0$), the depth-averaged horizontal stress in the plate is related to the horizontal surface displacement 
 $u(x,t)$ through Hooke's law:
 \begin{equation}
 \bar{\sigma}_{xx} = \frac{E}{1-\nu^2}\frac{\partial u}{\partial x},
@@ -228,13 +233,13 @@ where $E$ is Young's modulus and $\nu$ is Poisson's ratio. The factor
 $(1-\nu^2)^{-1}$ accounts for the lateral confinement of plane strain.
 Mechanical equilibrium of the plate requires the horizontal gradient of the
 depth-averaged stress to be balanced by the shear traction exerted at its base
-by the underlying viscous mantle:
+by the underlying half-space:
 \begin{equation}
 H\frac{\partial\bar{\sigma}_{xx}}{\partial x} + \sigma_{xz}^{\text{BOT}} = 0.
 \label{eq:equil}
 \end{equation}
 
-The rheological character of the asthenosphere enters through the constitutive
+The rheology of the half-space enters through the constitutive
 relation for the basal traction $\sigma_{xz}^{\text{BOT}}$. For a Newtonian
 viscous half-space, the shear stress at $x$ depends on the surface velocity
 at \emph{all} other points through the non-local Stokes kernel
@@ -246,33 +251,9 @@ at \emph{all} other points through the non-local Stokes kernel
 \label{eq:stokes}
 \end{equation}
 interpreted as Hadamard finite part. This non-local coupling reflects the
-long-range character of viscous flow in the half-space: a velocity perturbation
-at $x'$ decays as $(x-x')^{-2}$ rather than being confined to a finite
-diffusion radius. In magmatically active rifts, where high heat flow and partial
-melt weaken the lower crust \citep{holtzman2016questions,plasman2017lithospheric}, this
-coupling operates across the entire plate boundary system.
-
-% \citet{foulger1992post} start from the same force balance but close it
-% differently. Rather than coupling the elastic layer to an infinite viscous
-% half-space through the non-local Stokes kernel (\ref{eq:stokes}), they place
-% a viscous channel of finite thickness $H_v$ over a rigid base. Its basal
-% traction is then treated as local, simple-shear drag,
-% $\sigma_{xz}^{\mathrm{BOT}} \sim (\eta/H_v)\,\partial u/\partial t$, in place
-% of the convolution in (\ref{eq:stokes}). Substituted into (\ref{eq:equil}),
-% this closure collapses the governing equation to an ordinary, Fickian
-% diffusion equation for the surface displacement, $\partial u/\partial t =
-% \kappa\,\partial^2 u/\partial x^2$. The diffusivity $\kappa \propto E H
-% H_v/\eta$ this introduces aggregates the elastic-layer properties with the
-% assumed viscous-channel thickness $H_v$, rather than constraining a
-% half-space viscosity directly. Reproducing a given deformation pattern
-% therefore requires an a priori choice of $H_v$ at each site -- the
-% limitation already noted in Section~\ref{sec:intro}. Section~\ref{sec:fourier}
-% derives what the non-local closure (\ref{eq:stokes}) yields in its place: an
-% infinite half-space, rather than a finite channel, replaces the ordinary
-% Laplacian of Foulger et al.'s diffusion equation with the half-order
-% fractional Laplacian $(-\Delta)^{1/2}$ of Equation~\ref{eq:fractional}. The
-% two models therefore differ in the order of the governing diffusion
-% equation itself, not only in its diffusivity.
+long-range character of viscous flow in the half-space: the traction
+induced at $x$ by a velocity perturbation at $x'$ decays only as
+$(x-x')^{-2}$.
 
 Substituting
 (\ref{eq:hookean}) into (\ref{eq:equil}) and using (\ref{eq:stokes}) yields
@@ -285,7 +266,7 @@ the governing integro-differential equation for $u$:
 \end{equation}
 Dike intrusions enter as initial conditions: each event opens the rift
 instantaneously by $b$, offsetting the block on one side of the axis
-relative to the other (Figure~\ref{fig:schematic}).
+relative to the other (Fig.~\ref{fig:schematic}).
 Section~\ref{sec:step} shows that this offset
 subsequently redistributes into a symmetric $\pm b/2$ split about the
 pre-intrusion position far from the rift, while the opening measured at the
@@ -294,13 +275,12 @@ intrusion site itself remains exactly $b$ at all times.
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{fig/EsquemaModelo.png}
-  \caption{Model geometry.  The brittle elastic plate (thickness $H$,
+  \caption{Model geometry.  The elastic plate (thickness $H$,
     Young's modulus $E$, Poisson's ratio $\nu$) overlies either a Newtonian
     viscous half-space (viscosity $\eta$) or, in its visco-elastic
     extension (Section~\ref{sec:maxwell_model}), a Maxwell half-space of
     the same viscosity $\eta$ that additionally shares the plate's elastic
-    moduli $E,\nu$ -- the Elastic-Viscous (EV) and Elastic-Visco-Elastic
-    (EVE) cases, respectively.  Dike intrusions open the rift by
+    moduli $E,\nu$ -- the EV and EVE models, respectively.  Dike intrusions open the rift by
     $b$ at intervals $T$; the horizontal surface displacement $u(x,t)$ is
     positive in the $+x$ direction.  The parameter
     $a = EH/[2\eta(1-\nu^2)]$ sets the characteristic velocity that couples
@@ -311,7 +291,7 @@ intrusion site itself remains exactly $b$ at all times.
 \subsection{Fourier reduction and the characteristic velocity}
 \label{sec:fourier}
 
-Equation (\ref{eq:govPDE}) is non-local in $x$ and not tractable in physical
+Equation~(\ref{eq:govPDE}) is non-local in $x$ and not tractable in physical
 space. A spatial Fourier transform resolves this. Defining the transform pair
 \begin{equation*}
 \hat{u}(k,t) = \int_{-\infty}^{+\infty}u(x,t)e^{-ikx}\,dx,
@@ -339,14 +319,14 @@ Rearranging and introducing the characteristic velocity
 a := \frac{EH}{2\eta(1-\nu^2)},
 \label{eq:a}
 \end{equation}
-equation (\ref{eq:fourier_pre}) simplifies to a decoupled first-order ODE for
+eq.~(\ref{eq:fourier_pre}) simplifies to a decoupled first-order ODE for
 each wavenumber $k$:
 \begin{equation}
 \frac{\partial\hat{u}}{\partial t} = -a\,|k|\,\hat{u}.
 \label{eq:fourier}
 \end{equation}
-The parameter $a$ encodes the full elastic--viscous coupling of the system:
-large $a$ (stiff crust, low viscosity) implies rapid redistribution of
+The parameter $a$ combines the elastic and viscous properties of the system:
+large $a$ (stiff plate, low viscosity) implies rapid redistribution of
 post-diking strain over broad spatial scales; small $a$ implies slow, locally
 confined relaxation. In physical space, the operator $|k|$ corresponds to the
 fractional half-Laplacian $(-\Delta)^{1/2}$, so (\ref{eq:fourier}) is
@@ -356,23 +336,6 @@ equivalently written as the fractional diffusion equation
 \frac{\partial u}{\partial t} = -a\,(-\Delta)^{1/2}u.
 \label{eq:fractional}
 \end{equation}
-% This order is not a modelling choice. The fractional Laplacian admits a
-% representation as a Dirichlet-to-Neumann map for a harmonic extension
-% problem into an auxiliary half-space, weighted by $y^{1-2s}$; the weight
-% vanishes, and the extension becomes the ordinary Laplace equation, only at
-% $s=1/2$ \citep{caffarelli2007extension,daoud2022fractional}. That is the
-% same half-space potential problem generating the Stokes kernel itself, so
-% the half-order non-locality in (\ref{eq:fractional}) is forced by the
-% geometry of the elastic-plate--viscous-half-space coupling, not fitted to
-% the data. Solving the full two-dimensional Stokes flow beneath the plate,
-% governed by the biharmonic rather than the harmonic equation, still
-% recovers the same interface operator $-2\eta(-\Delta)^{1/2}$ exactly once
-% the interface stress is extracted.
-
-% This contrasts with classical Fickian diffusion: the half-order operator, a
-% direct consequence of the non-local Stokes kernel, produces Lorentzian rather
-% than Gaussian spatial profiles, with tails that decay as $1/x$ rather than
-% exponentially.
 
 The solution of (\ref{eq:fourier}) for arbitrary initial data is:
 \begin{equation}
@@ -385,7 +348,7 @@ The solution of (\ref{eq:fourier}) for arbitrary initial data is:
 
 The simplest building block of the model is the deformation produced by a
 single instantaneous dike intrusion at $t = 0$, which opens the rift by $b$.
-Because the governing equation (\ref{eq:govPDE}) constrains $u$ only through
+Because the governing eq.~(\ref{eq:govPDE}) constrains $u$ only through
 its gradient, the reference level from which this offset is measured is
 arbitrary. We therefore write the initial condition, without loss of
 generality, as a Heaviside displacement, with the symmetric convention
@@ -413,90 +376,87 @@ $\delta(k)$ is active only where $e^{-a|k|t}=1$:
 \end{equation}
 The inverse transform of (\ref{eq:evolved}) reduces to a Dirichlet-type
 integral (Appendix~\ref{app:step}). We label quantities of this
-single-event solution with a STEP superscript, to distinguish them from the
-periodic Recurrent Steady State (RSS) of \S\ref{sec:css}. The step
+single-event solution with a STEP subscript, to distinguish them from the
+periodic RSS of Section~\ref{sec:css}. The step
 displacement is
 \begin{equation}
-u^{\text{STEP}}(x,t) = \frac{b}{\pi}\arctan\!\left(\frac{at}{x}\right).
+u_{\text{STEP}}(x,t) = \frac{b}{\pi}\arctan\!\left(\frac{at}{x}\right).
 \label{eq:step}
 \end{equation}
 Differentiating with respect to $t$, the step velocity is a Lorentzian
 profile that broadens in time:
 \begin{equation}
-v^{\text{STEP}}(x,t) = \frac{b a}{\pi}\,\frac{x}{x^2 + a^2t^2}.
+v_{\text{STEP}}(x,t) = \frac{b a}{\pi}\,\frac{x}{x^2 + a^2t^2}.
 \label{eq:stepv}
 \end{equation}
 Both expressions depend on $x$ and $t$ only through a single combination,
 $x/(at)$: the self-similarity structure of the step response, developed
-in \S\ref{sec:step_selfsimilar} below.
+in Section~\ref{sec:step_selfsimilar} below.
 
-The surface profile is only the boundary trace of a flow that fills the
-underlying half-space. Depth is reintroduced through the same harmonic
-extension used to construct the fractional Laplacian in
-Section~\ref{sec:fourier}: at depth $z$, the horizontal and vertical
-interior velocity components are the Poisson-kernel convolution of the
-surface velocity $V(x)$,
+The surface velocity drives a flow throughout the underlying half-space.
+At depth $z$, the horizontal and vertical interior velocity components
+are the Poisson-kernel convolution of the
+surface velocity $v_s(x)$,
 \begin{equation}
 \begin{split}
-v_x(x,z) &= \frac{2}{\pi}\int_{-\pi/2}^{\pi/2} \sin^2\theta\, V(x-z\tan\theta)\,d\theta, \\
-v_z(x,z) &= \frac{2}{\pi}\int_{-\pi/2}^{\pi/2} \sin\theta\cos\theta\, V(x-z\tan\theta)\,d\theta,
+v_x(x,z) &= \frac{2}{\pi}\int_{-\pi/2}^{\pi/2} \sin^2\theta\, v_s(x-z\tan\theta)\,d\theta, \\
+v_z(x,z) &= \frac{2}{\pi}\int_{-\pi/2}^{\pi/2} \sin\theta\cos\theta\, v_s(x-z\tan\theta)\,d\theta,
 \end{split}
 \label{eq:halfspace_kernel}
 \end{equation}
-with $V$ set to the EV step velocity $v^{\text{STEP}}(x,t)$ (\ref{eq:stepv}).
+with $v_s$ set to the EV step velocity $v_{\text{STEP}}(x,t)$ (\ref{eq:stepv}).
 
 Figure~\ref{fig:viscous_halfspace_step} follows the relaxation of a
 single intrusion over three orders of magnitude in time, at the surface
 (left column) and in the underlying half-space (middle and right
 columns). At the surface, the response is a pulse of divergent velocity
 that travels away from the rift axis. Its peak sits exactly at
-$x = a\tau$ (dashed lines), so $a$ is the speed at which post-diking
-deformation propagates, and its amplitude decays as $b/(2\pi\tau)$.
+$x = at$ (dashed lines), so $a$ is the speed at which post-diking
+deformation propagates, and its amplitude decays as $b/(2\pi t)$.
 A point at distance $|x|$ has moved by $b/4$, half of its final share
-of the opening, when the peak passes it at $\tau = |x|/a$; the remaining
-$b/4$ accumulates only slowly, as $u^{\text{STEP}}$ approaches $b/2$
-as $1/\tau$. Ahead of the peak ($|x| \gg a\tau$), Equation~(\ref{eq:stepv})
-reduces to the time-independent tail $ba/(\pi x)$: a distant station
+of the opening, when the peak passes it at $t = |x|/a$; the remaining
+$b/4$ accumulates only slowly, as $u_{\text{STEP}}$ approaches $b/2$
+as $1/t$. Ahead of the peak ($|x| \gg at$), eq.~(\ref{eq:stepv})
+reduces to the time-independent tail $ba/(\pi x)$, so a distant station
 records a nearly constant velocity from the moment of intrusion until
-the peak arrives. Behind the peak ($|x| \ll a\tau$), the velocity falls
-as $bx/(\pi a\tau^2)$ and vanishes on the axis itself.
+the peak arrives. Behind the peak ($|x| \ll at$), the velocity falls
+as $bx/(\pi a t^2)$ and vanishes on the axis itself.
 
-The interior field shows the flow that drives this surface pulse.
+The interior field shows the flow that accompanies this surface pulse.
 Material rises beneath the axis and turns outward beneath the plate,
-feeding the divergence of the two flanks (middle column). Because
-Equation~(\ref{eq:halfspace_kernel}) is linear
+beneath the diverging flanks (middle column). Because
+eq.~(\ref{eq:halfspace_kernel}) is linear
 in the surface velocity, the interior field inherits the self-similarity
-of Equation~(\ref{eq:stepv}): $\tau$ times the velocity depends only on
-$x/(a\tau)$ and $z/(a\tau)$. The deforming region therefore deepens at
-the same rate $a$ as it widens. At distances much larger than $a\tau$
+of eq.~(\ref{eq:stepv}): $t$ times the velocity depends only on
+$x/(at)$ and $z/(at)$, so the deforming region deepens at
+the same rate $a$ as it widens. At distances much larger than $at$
 from the intrusion, the flow keeps its early, time-independent pattern,
 which is why the middle column barely changes across the six rows: even
-at $\tau = 3\tau_R$, $a\tau \approx 4H$ remains small compared with the
-$30H$ window. Within $a\tau$, the flow has already slowed down. The
+at $t = 3\tau_R$, $at \approx 4H$ remains small compared with the
+$30H$ window. Within $at$, the flow has already slowed down. The
 enlarged panels (right column) show this as a low-velocity region that
-opens beneath the axis and grows with $\tau$. The surface itself moves
+opens beneath the axis and grows with $t$. The surface itself moves
 only horizontally ($v_z = 0$ at $z = 0$), consistent with the
-horizontal-only plate of Section~\ref{sec:setup}; the uplift recorded
-geodetically above rifts lies outside this model.
+horizontal-only plate of Section~\ref{sec:setup}.
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{fig/fig_halfspace_step_contour.png}
   \caption{EV STEP response to a single dike intrusion of opening $b$ at
-    $t=0$, at six times $\tau/\tau_R \in \{0.001,\,0.25,\,0.5,\,1,\,2,\,3\}$,
+    $t=0$, at six times $t/\tau_R \in \{0.001,\,0.25,\,0.5,\,1,\,2,\,3\}$,
     one per row. The Maxwell time $\tau_R=\eta/\mu_m$
     (Section~\ref{sec:maxwell_model}) serves here only as a time unit, the
     same one used for the EVE counterpart
-    (Figure~\ref{fig:maxwell_halfspace_step}).
-    Left column: surface velocity $v^{\text{STEP}}$
-    (Equation~\ref{eq:stepv}; solid, left axis, in units of $b/\tau_R$)
-    and displacement $u^{\text{STEP}}$ (Equation~\ref{eq:step}; dashed,
+    (Fig.~\ref{fig:maxwell_halfspace_step}).
+    Left column: surface velocity $v_{\text{STEP}}$
+    (eq.~\ref{eq:stepv}; solid, left axis, in units of $b/\tau_R$)
+    and displacement $u_{\text{STEP}}$ (eq.~\ref{eq:step}; dashed,
     right axis, in units of $b$), counted from the instant after the
     intrusion, so that the two flanks move apart symmetrically and each
     tends to $\pm b/2$ at the axis. The dashed vertical line marks
-    $x=a\tau$, the position of the velocity peak.
+    $x=at$, the position of the velocity peak.
     Middle column: speed $|v|$ in the half-space beneath the plate (filled
     contours, logarithmic scale, in units of $b/\tau_R$), computed from
-    the surface velocity with Equation~(\ref{eq:halfspace_kernel}) over
+    the surface velocity with eq.~(\ref{eq:halfspace_kernel}) over
     $|x|\le 30H$ and $z\le 30H$. Arrows show the flow direction only and
     have a fixed length.
     Right column: the same field enlarged to $|x|\le H$, $z\le H$ beneath
@@ -504,32 +464,31 @@ geodetically above rifts lies outside this model.
     bar range $[0.01,\,1]$ are clipped to its end colours.
     All lengths are scaled by the plate thickness $H$. Parameters:
     $H=10$~km, $E=40$~GPa, $\nu=0.25$, $\eta=5.2\times10^{18}$~Pa\,s,
-    giving $a\approx1.3$~km\,yr$^{-1}$ and $a\tau_R/H=1/(1-\nu)\approx1.33$.}
+    giving $a\approx4.1\times10^{-5}$~m~s$^{-1}$ ($\approx1.3$~km~yr$^{-1}$) and $a\tau_R/H=1/(1-\nu)\approx1.33$.}
   \label{fig:viscous_halfspace_step}
 \end{figure*}
 
-\subsubsection{Self-similarity of the step response}
+\subsection{Self-similarity of the step response}
 \label{sec:step_selfsimilar}
 
 Both the displacement (\ref{eq:step}) and velocity (\ref{eq:stepv}) of
 Section~\ref{sec:step} depend on $x$ and $t$ only through the
 self-similarity variable $\xi := x/(at)$, which measures distance in units
-of the velocity-peak position $at$, so that the profile's shape is invariant
-in $\xi$ at every $t$. Dividing $u^{\text{STEP}}$ by $b$ and
-$v^{\text{STEP}}$ by $b/t$ collapses both onto universal curves,
+of the velocity-peak position $at$. Dividing $u_{\text{STEP}}$ by $b$ and
+$v_{\text{STEP}}$ by $b/t$ collapses both onto universal curves,
 independent of $E$, $H$, $\eta$, or $b$:
 \begin{equation}
-\frac{u^{\text{STEP}}}{b} = \frac{1}{\pi}\arctan\!\left(\frac{1}{\xi}\right),
+\frac{u_{\text{STEP}}}{b} = \frac{1}{\pi}\arctan\!\left(\frac{1}{\xi}\right),
 \label{eq:step_dimless}
 \end{equation}
 \begin{equation}
-\frac{t\,v^{\text{STEP}}}{b} = \frac{1}{\pi}\,\frac{\xi}{1+\xi^2}.
+\frac{t\,v_{\text{STEP}}}{b} = \frac{1}{\pi}\,\frac{\xi}{1+\xi^2}.
 \label{eq:stepv_dimless}
 \end{equation}
 
 Figure~\ref{fig:step_selfsimilar}a plots the displacement collapse
 (\ref{eq:step_dimless}) directly, alongside the Fickian
-\citet{foulger1992post} diffusion mode: writing $u_{\text{Foulger}}/b = \tfrac{1}{2}\,\mathrm{erfc}(\xi_F/2)$ in
+\citet{foulger1992post} diffusion model: writing $u_{\text{Foulger}}/b = \tfrac{1}{2}\,\mathrm{erfc}(\xi_F/2)$ in
 terms of its own self-similarity variable $\xi_F := x/\sqrt{\kappa t}$,
 both curves are shown for $\xi>0$ only. This isolates the decay of the
 tails, a power law for EV and a Gaussian for Foulger, without reference
@@ -548,20 +507,8 @@ Figure~\ref{fig:step_selfsimilar}b plots (\ref{eq:stepv_dimless}) and
 a straight line on logarithmic axes, while the Fickian velocity decays as
 the far steeper $\xi_F\,e^{-\xi_F^2/4}$. Because $\xi$ and $\xi_F$ scale
 distance by different lengths, $at$ and $\sqrt{\kappa t}$, the horizontal
-offset between the two curves carries no physical meaning; the robust
-contrast is the shape of the tail, a power law against a Gaussian.
-
-The two collapses also differ in how the velocity peak moves. The EV peak
-sits at $\xi = 1$, that is at $x = at$, and migrates outward at the
-constant speed $a$. The Fickian peak sits at $\xi_F = \sqrt{2}$, that is at
-$x = \sqrt{2\kappa t}$, and decelerates as $t^{-1/2}$. A station at
-distance $x$ from the axis therefore records its maximum velocity at
-$t = x/a$ in the EV model but at $t = x^2/(6\kappa)$ in the Fickian
-model: the arrival time of the transient grows linearly with distance in
-the first case and quadratically in the second. Geodetic time series
-recorded at several distances from the axis can, in principle,
-discriminate between the two on this basis alone, independently of the
-tail amplitude.
+offset between the two curves carries no physical meaning, and only the
+shapes of the tails, a power law and a Gaussian, can be compared.
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{fig/fig_step_selfsimilar_raw.png}
@@ -570,16 +517,14 @@ tail amplitude.
     its own self-similarity variable ($\xi = x/(at)$ for EV,
     $\xi_F = x/\sqrt{\kappa t}$ for Foulger) for $\xi>0$. Both models start
     from the same opening $b$, so both displacements equal $b/2$ at the
-    rift axis; the curves are not normalised.
+    rift axis; neither curve is rescaled to a common length.
     (a)~Displacement $u/b$: EV (\ref{eq:step_dimless}) and Foulger
     $\tfrac{1}{2}\mathrm{erfc}(\xi_F/2)$.
     (b)~Velocity $t\,v/b$: EV (\ref{eq:stepv_dimless}) and Foulger
     (\ref{eq:foulger_v_dimless}).
     In both panels the dotted guide marks the $\xi^{-1}$ power-law slope
     the EV curve approaches; the Fickian curves instead decay as a
-    Gaussian. Because $\xi$ and $\xi_F$ use different length scales, only
-    the shapes of the two tails, not their horizontal offset, are
-    comparable.}
+    Gaussian.}
   \label{fig:step_selfsimilar}
 \end{figure}
 
@@ -608,16 +553,16 @@ v(x,\tau) = \frac{b a}{\pi}\sum_{j=0}^{N-1}
 
 \subsubsection{The RSS limit and Digamma representation}
 
-After many cycles the system enters a periodic state, the rift analog of the
+After many cycles the system enters a periodic state, the rift analogue of the
 cyclic steady state described for the interseismic earthquake cycle \citep{thatcher1984viscoelastic,hetland2006interseismic}.
-The Recurrent Steady State (RSS) velocity is obtained by extending
+The RSS velocity is obtained by extending
 (\ref{eq:finite_sum_v}) to an infinite history by letting $N\to\infty$:
 \begin{equation}
 v_{\text{RSS}}(x,\tau) = \frac{b a}{\pi}
   \sum_{j=0}^{\infty}\frac{x}{x^2 + a^2(\tau+jT)^2}.
 \label{eq:css_sum}
 \end{equation}
-Because this series converges absolutely, it reduces to a closed form in
+This series converges absolutely and sums to a closed form in
 the Digamma function $\psi(z)$ (Appendix~\ref{app:digamma}):
 \begin{equation}
 v_{\text{RSS}}(x,\tau) =
@@ -646,35 +591,33 @@ half the dike opening:
 \int_0^T v_{\text{RSS}}(x,\tau)\,d\tau = \frac{b}{2}, \qquad \forall\,x>0.
 \label{eq:conservation}
 \end{equation}
-This is not imposed as a boundary condition but follows analytically from the
-Digamma representation: $\Gamma(1+iq) = iq\,\Gamma(iq)$ implies
+This result follows from the Digamma representation:
+$\Gamma(1+iq) = iq\,\Gamma(iq)$ implies
 $\IM\{\ln\Gamma(1+iq)-\ln\Gamma(iq)\} = \pi/2$, giving the integral $b/2$.
-The two flanks together therefore separate by $b$ per cycle, exactly the
-opening of the dike intruded during that cycle, while each flank advances
-by only half of it. The RSS thus reconciles high-frequency magmatic
-pulses with secular divergence without unphysical boundary conditions,
-satisfying the far-field constraint of global plate motion models
-\citep{saria2014present,stamps2021redefining} by construction.
+Each flank advances by half the dike opening per cycle, so the two flanks
+together separate by $b$, the opening of the dike intruded during that
+cycle. In the model, the relaxation of discrete intrusions thus suffices to
+sustain a steady far-field divergence at the rate measured by global plate
+motion models \citep{saria2014present,stamps2021redefining}, with no
+condition imposed at the lateral boundaries.
 
 Figure~\ref{fig:rss_accumulation} shows how this conservation plays out
 over successive cycles.  After $n$ complete cycles and a further phase
 $\tau$, the displacement accumulated since a reference intrusion is
 $n(b/2)\,\mathrm{sgn}(x) + u_{\text{RSS}}(x,\tau)$.  At the end of each
 cycle, $u_{\text{RSS}}(x,T^-) = b/2$ at every $x>0$
-(Equation~\ref{eq:conservation}), so each flank has translated as a rigid
+(eq.~\ref{eq:conservation}), so each flank has translated as a rigid
 block by $b/2$ and the profile is uniform (thick lines in
-Figure~\ref{fig:rss_accumulation}a).  Within the cycle, the displacement is
-not uniform: the region next to the axis takes up its share of the
+Fig.~\ref{fig:rss_accumulation}a).  Within the cycle, the region next to the axis takes up its share of the
 opening almost immediately after the intrusion, while distant points
 catch up later in the cycle.  The resulting histories
-(Figure~\ref{fig:rss_accumulation}b) range from a staircase at the axis,
+(Fig.~\ref{fig:rss_accumulation}b) range from a staircase at the axis,
 which jumps by $b/2$ at each intrusion, to a nearly uniform rate $b/(2T)$
 far from it.  At $x = 0.1\,aT$, nearly 80 per cent of the $b/2$ is gained
 in the first quarter of the cycle; at $x = aT$, the history departs from
 the uniform rate by at most $0.04\,b$, and at $x = 3\,aT$ by at most
 $0.013\,b$.  A station at $|x| \gtrsim aT$ therefore records an almost
-steady velocity, the inter-rifting plate divergence, even though all of
-the opening is delivered in discrete events.
+steady velocity, the inter-rifting plate divergence.
 
 \begin{figure}
   \centering
@@ -691,20 +634,20 @@ the opening is delivered in discrete events.
 \end{figure}
 
 The interior flow of the RSS follows from the same Poisson-kernel
-extension (\ref{eq:halfspace_kernel}), with $V$ now set to the EV RSS
+extension (\ref{eq:halfspace_kernel}), with $v_s$ now set to the EV RSS
 velocity $v_{\text{RSS}}(x,\tau)$ (\ref{eq:vcss}).
 Figure~\ref{fig:viscous_halfspace_css} shows it in the same layout as the
-STEP field of Section~\ref{sec:step} (Figure~\ref{fig:viscous_halfspace_step}),
+STEP field of Section~\ref{sec:step} (Fig.~\ref{fig:viscous_halfspace_step}),
 for $T = 5\tau_R$ and at six phases spread over one cycle: the surface
 profile (left column), the speed in the half-space (middle column), and
 an enlargement beneath the axis (right column).  Distances are scaled by
 $aT$ and velocities by the rift opening rate $V = b/T$, so colours are not
 comparable with those of the STEP figure, whose unit is $b/\tau_R$.
 
-The RSS field differs from the STEP field in one essential respect: it
-never empties out. Far from the axis ($|x| \gg aT$), each flank moves at
+Unlike the STEP velocity, the RSS velocity does not decay from one cycle
+to the next. Far from the axis ($|x| \gg aT$), each flank moves at
 $V/2$ throughout the cycle, so the two flanks separate at the full rift
-opening rate $V$, as required by Equation~(\ref{eq:conservation}). Near the axis, each
+opening rate $V$, as required by eq.~(\ref{eq:conservation}). Near the axis, each
 cycle repeats the behaviour of the single event. Immediately after an
 intrusion, the near-axis velocity exceeds $V$ by more than an order of
 magnitude, and a velocity peak migrates away from the axis close to
@@ -715,7 +658,7 @@ distance of order $aT$. The interior field follows the same pattern.
 Upwelling beneath the axis and outward flow beneath the plate persist at
 every phase, and over most of the half-space the speed stays between
 roughly $0.1\,V$ and $V/2$ throughout the cycle (middle column).  Only the
-region beneath the axis changes: as in the STEP response, a low-velocity
+region beneath the axis changes. As in the STEP response, a low-velocity
 region opens there after each intrusion and grows until the next one
 (right column).
 
@@ -723,23 +666,23 @@ region opens there after each intrusion and grows until the next one
   \centering
   \includegraphics[width=\textwidth]{fig/fig_halfspace_css_contour.png}
   \caption{EV RSS for $T=5\tau_R$, in the same layout as the STEP response
-    (Figure~\ref{fig:viscous_halfspace_step}), at six phases
+    (Fig.~\ref{fig:viscous_halfspace_step}), at six phases
     $\tau/T \in \{0.001,\,0.2,\,0.4,\,0.6,\,0.8,\,0.99\}$, one per row.
     Left column: surface velocity $v_{\text{RSS}}$
-    (Equation~\ref{eq:vcss}; solid, left axis, in units of $V=b/T$) and
+    (eq.~\ref{eq:vcss}; solid, left axis, in units of $V=b/T$) and
     displacement accumulated since the most recent intrusion
-    $u_{\text{RSS}}$ (Equation~\ref{eq:ucss}; dashed, right axis, in units
+    $u_{\text{RSS}}$ (eq.~\ref{eq:ucss}; dashed, right axis, in units
     of $b$).  The dashed vertical line marks $x=a\tau$, the velocity-peak
     position of the most recent intrusion alone.
     Middle column: speed $|v|$ in the half-space (filled contours,
     logarithmic scale, in units of $V$), computed with
-    Equation~(\ref{eq:halfspace_kernel}) over $|x|\le 4.5\,aT$ and
+    eq.~(\ref{eq:halfspace_kernel}) over $|x|\le 4.5\,aT$ and
     $z\le 4.5\,aT$.  Arrows show the flow direction only and have a fixed
     length.
     Right column: the same field enlarged to $|x|\le 0.15\,aT$,
     $z\le 0.15\,aT$ beneath the rift axis, with the same colour scale.
     Speeds outside the colour bar range $[0.01,\,1]$ are clipped to its
-    end colours.  Parameters as in Figure~\ref{fig:viscous_halfspace_step},
+    end colours.  Parameters as in Fig.~\ref{fig:viscous_halfspace_step},
     giving $aT \approx 67$~km.}
   \label{fig:viscous_halfspace_css}
 \end{figure*}
@@ -747,12 +690,12 @@ region opens there after each intrusion and grows until the next one
 Equation~(\ref{eq:vcss}) also fixes the scales of the RSS. Normalised by
 the rift opening rate $V=b/T$, the velocity depends only on the phase $\tau/T$
 and on $x/(aT)$, which together form the Digamma argument
-$\tau/T + ix/(aT)$: $aT$ sets the spatial scale
-of the deformation zone and $b/T$ its amplitude. Late in the cycle, $aT$
+$\tau/T + ix/(aT)$: $aT$, which we call the deformation half-width, sets
+the spatial scale of the deformation zone and $b/T$ its amplitude. Late in the cycle, $aT$
 is the distance over which the velocity rises from zero at the axis to
 the far-field value $\pm V/2$; early in the cycle, the near-axis profile
 is dominated by the most recent intrusion, whose velocity peak sits at
-$x \approx a\tau < aT$ (Figure~\ref{fig:viscous_halfspace_css}). Because
+$x \approx a\tau < aT$ (Fig.~\ref{fig:viscous_halfspace_css}). Because
 $aT \propto EHT/\eta$, a geodetic profile that resolves this scale
 constrains $EH/\eta$ wherever $T$ can be estimated independently.
 
@@ -760,10 +703,11 @@ The RSS assumes an infinite history of intrusions. Truncating the sum
 (\ref{eq:finite_sum_v}) after $N$ intrusions removes the contribution of
 the older ones; approximating the missing terms by an integral, the
 truncated velocity falls short of the RSS by
-$\approx (V/\pi)\arctan[|x|/(NaT)]$. The truncated sum is therefore
-accurate only within $|x| \ll NaT$ (Figure~\ref{fig:css_behavior}): after
-ten cycles, the deficit is 3 per cent of $V$ at $|x| = aT$ but 25 per cent
-at $|x| = 10\,aT$. Physically, the far-field plateau $\pm V/2$ is carried
+$\approx (V/\pi)\arctan[|x|/(NaT)]$ (Fig.~\ref{fig:css_behavior}).
+After ten cycles, the deficit is 6 per cent of the far-field velocity
+$V/2$ at $|x| = aT$ but 50 per cent at $|x| = 10\,aT$, and the truncated
+sum stays within 5 per cent of $V/2$ only where $N \gtrsim 13\,|x|/(aT)$.
+Physically, the far-field plateau $\pm V/2$ is carried
 by old intrusions, whose single-event velocity peaks have migrated to
 $x \approx a(\tau+jT)$; a station at distance $|x|$ records the RSS only
 if the rift has hosted intrusions for much longer than $|x|/a$. Where this
@@ -775,7 +719,7 @@ condition fails, as on a newly initiated rift segment, the explicit sum
   \includegraphics[width=\columnwidth]{fig/fig_css_behavior.png}
   \caption{Convergence of the finite-sum velocity
     (\ref{eq:finite_sum_v}) to the RSS (\ref{eq:vcss}) at phase
-    $\tau/T=0.5$, for $N = 1$, 3, 10 and 2000 past intrusions (solid curves)
+    $\tau/T=0.5$, for $N = 1$, 3, 10 and 100 past intrusions (solid curves)
     and the RSS (dashed). Velocity is normalised by $b/T$ and distance by
     $aT$. The deficit of the truncated sum grows with distance,
     approximately as $(b/\pi T)\arctan[x/(NaT)]$: with $N=10$, the sum
@@ -786,20 +730,15 @@ condition fails, as on a newly initiated rift segment, the explicit sum
 
 
 
-\section{Visco-elastic (EVE) extension}
+\section{Elastic--visco-elastic (EVE) model}
 \label{sec:eve_model}
-
-We refer to the two half-space rheologies compared throughout this paper as
-Elastic-Viscous (EV), for the Newtonian viscous half-space of
-Section~\ref{sec:model}, and Elastic-Visco-Elastic (EVE), for the Maxwell
-visco-elastic half-space developed in this section.
 
 \subsection{Maxwell half-space and the visco-elastic Stokes kernel}
 \label{sec:maxwell_model}
 
 The Maxwell relaxation time $\tau_R := \eta/\mu_m$, where $\mu_m$ is the
-mantle shear modulus, separates two regimes: on timescales $t \ll \tau_R$
-the asthenosphere responds elastically, and on timescales $t \gg \tau_R$ it
+shear modulus of the half-space, separates two regimes: on timescales
+$t \ll \tau_R$ the half-space responds elastically, and on timescales $t \gg \tau_R$ it
 flows viscously \citep{burgmann2008rheology}. We model this by replacing
 the Newtonian half-space with a Maxwell body, a Hookean spring and a
 Newtonian dashpot in series. By the elastic--visco-elastic correspondence
@@ -827,8 +766,8 @@ Stokes kernel (\ref{eq:stokes}).
 
 \subsubsection{Governing equation in Fourier space}
 
-The equilibrium equation (\ref{eq:equil}) expresses the basal traction in terms
-of the elastic crust displacement:
+The equilibrium eq.~(\ref{eq:equil}) expresses the basal traction in terms
+of the plate displacement:
 \begin{equation}
 \sigma_{xz}^{\text{BOT}} = -\frac{EH}{1-\nu^2}\frac{\partial^2 u}{\partial x^2}.
 \label{eq:sigma_from_equil}
@@ -850,14 +789,14 @@ $\partial\hat{u}/\partial t$ terms gives the visco-elastic analogue of
 = -\left(\frac{a|k|}{1+\tau_R a|k|}\right)\hat{u}.
 \label{eq:maxwell_fourier}
 \end{equation}
-The denominator $1+\tau_R a|k|$ acts as a low-pass filter on the relaxation
-rate, slowing the decay of high-wavenumber (near-field) features relative to
-the EV case.
+The denominator $1+\tau_R a|k|$ caps the relaxation rate at $1/\tau_R$ for
+$|k| \gg 1/(a\tau_R)$, so short-wavelength (near-field) features decay more
+slowly than in the EV case.
 
-\subsection{Step response and asymptotic behavior}
+\subsection{Step response and asymptotic behaviour}
 \label{sec:eve_step}
 
-Equation (\ref{eq:maxwell_fourier}) is separable in $k$, yielding a decaying
+Equation~(\ref{eq:maxwell_fourier}) is separable in $k$, yielding a decaying
 exponential for each wavenumber:
 \begin{equation}
 \hat{u}(k,t) = \hat{u}(k,0)\exp\!\left(-\frac{a|k|}{1+\tau_R a|k|}\,t\right).
@@ -873,7 +812,7 @@ Taking the inverse Fourier transform and following the same parity argument as
 in Section~\ref{sec:step}, the EVE step displacement requires numerical
 integration:
 \begin{equation}
-u^{\text{EVE}}(x,t) = \frac{b}{2}
+u_{\text{STEP}}^{\text{EVE}}(x,t) = \frac{b}{2}
   - \frac{b}{\pi}\int_0^{+\infty}
     \frac{\sin(kx)}{k}\exp\!\left(-\frac{akt}{1+\tau_R ak}\right)dk,
 \label{eq:maxwell_step}
@@ -882,29 +821,30 @@ since the rational exponent prevents the closed-form Dirichlet evaluation of
 Appendix~\ref{app:step}. The surface velocity follows by differentiating
 (\ref{eq:maxwell_step}) with respect to $t$:
 \begin{equation}
-v^{\text{EVE}}(x,t) = \frac{b a}{\pi}\int_0^{+\infty}
+v_{\text{STEP}}^{\text{EVE}}(x,t) = \frac{b a}{\pi}\int_0^{+\infty}
   \frac{\sin(kx)}{1+\tau_R ak}
   \exp\!\left(-\frac{akt}{1+\tau_R ak}\right)dk.
 \label{eq:maxwell_vel}
 \end{equation}
-Both integrals are evaluated numerically (Appendix~\ref{app:numerics}).
+We evaluate both integrals numerically (Appendix~\ref{app:numerics}).
 
 The exponent in (\ref{eq:maxwell_step}) reveals two physically distinct regimes.
 In the long-wavelength limit ($k\to 0$ or $t\to\infty$), $1+\tau_R ak \approx 1$
 and the exponential reduces to $\exp(-akt)$, recovering the EV
 Dirichlet integral of Section~\ref{sec:step}. The elastic memory of the
-asthenosphere fades at large distances and late times, and the model converges
+half-space fades at large distances and late times, and the model converges
 to the Newtonian viscous limit. In the short-wavelength limit ($k\to\infty$ or
 $t\to 0$), $1+\tau_R ak \approx \tau_R ak$ and the exponent saturates:
 \begin{equation}
 \lim_{k\to\infty}\left(-\frac{akt}{1+\tau_R ak}\right) = -\frac{t}{\tau_R}.
 \label{eq:maxwell_saturation}
 \end{equation}
-At early times $t\ll\tau_R$, the exponential approaches unity and no near-field
-deformation occurs outside the rift interface. For $t\sim\tau_R$, near-field
+The saturation applies to wavenumbers $k \gtrsim 1/\ell_M$, where
+$\ell_M := a\tau_R$ is the Maxwell length. At early times $t\ll\tau_R$, the exponential is close to unity at all
+wavenumbers, so the displacement remains close to the initial step. For $t\sim\tau_R$, near-field
 deformation decays exponentially at the fixed rate $1/\tau_R$, representing
-pure Maxwell relaxation of the mantle independent of the elastic crust.
-Together, (\ref{eq:maxwell_vel}) and (\ref{eq:maxwell_saturation}) demonstrate
+pure Maxwell relaxation of the half-space independent of the plate.
+Together, (\ref{eq:maxwell_vel}) and (\ref{eq:maxwell_saturation}) show
 that the EVE model introduces a short-time, near-field stiffening relative
 to the EV model, and that the EVE step response converges to the EV one
 at $t\gg\tau_R$.
@@ -915,55 +855,39 @@ to $\sin(kx)\,e^{-t/\tau_R}/(\tau_R k)$, and these wavenumbers control the
 velocity as $x \to 0$. The Dirichlet integral of Section~\ref{sec:step}
 then gives
 \begin{equation}
-v^{\text{EVE}}(x\to0^+,\,t) = \frac{b}{2\tau_R}\,e^{-t/\tau_R},
+v_{\text{STEP}}^{\text{EVE}}(x\to0^+,\,t) = \frac{b}{2\tau_R}\,e^{-t/\tau_R},
 \label{eq:maxwell_plateau}
 \end{equation}
 a finite plateau that decays at the Maxwell rate, whereas the EV velocity
-vanishes at the axis. The near-field signal of the EVE model is therefore
-an elastic rebound of the half-space, paced by $\tau_R$ rather than by the
-diffusion front $a t$.
+vanishes at the axis. The near-field signal of the EVE model is an
+elastic rebound of the half-space.
 
 Figure~\ref{fig:maxwell_halfspace_step} shows the EVE STEP response in
-the same layout as its EV counterpart (Figure~\ref{fig:viscous_halfspace_step}):
+the same layout as its EV counterpart (Fig.~\ref{fig:viscous_halfspace_step}):
 same velocity unit $b/\tau_R$, colour scale, windows, vertical guide
-$x = a\tau$ and phases, except that its first row shows the limit
-$\tau\to0^+$ rather than $\tau = 0.001\,\tau_R$. Any difference between
-the two figures therefore reflects the rheology alone. Unlike the EV
+$x = at$ and times, except that its first row shows the limit
+$t\to0^+$ rather than $t = 0.001\,\tau_R$. Differences between
+the two figures reflect only the rheology. Unlike the EV
 case, the surface velocity is finite immediately after the intrusion and
 reaches $b/(2\tau_R)$ at the axis, the near-field plateau of
-Equation~(\ref{eq:maxwell_plateau}). Peak
-surface velocity is largest at $\tau\to0^+$ and falls with increasing
-$\tau$, and the underlying flow lobe shrinks and thins in step, the same
-qualitative decay as the EV STEP field but paced by $\tau_R$ rather than
-by the diffusion front.
+eq.~(\ref{eq:maxwell_plateau}). Peak
+surface velocity is largest at $t\to0^+$ and falls with increasing
+$t$, and the underlying flow lobe shrinks and thins in step, the same
+qualitative decay as the EV STEP field, but on the timescale $\tau_R$.
 
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{fig/fig_halfspace_step_maxwell_contour.png}
-  \caption{EVE STEP response to a single dike intrusion of opening $b$,
-    with the same layout, units, colour scale and parameters as the EV
-    STEP response (Figure~\ref{fig:viscous_halfspace_step}) and
-    $\tau_R=\eta/\mu_m$ from the shared-modulus closure
-    (Equation~\ref{eq:tau_R_shared}). Rows show
-    $\tau/\tau_R \in \{0^+,\,0.25,\,0.5,\,1,\,2,\,3\}$. The first row is
-    the limit $\tau\to0^+$, evaluated in closed form: unlike the EV case,
-    the surface velocity there is finite, reaching $b/(2\tau_R)$ at the
-    axis (Equation~\ref{eq:maxwell_plateau}).
-    Left column: surface velocity $v^{\text{EVE}}$
-    (Equation~\ref{eq:maxwell_vel}; solid, left axis, in units of
-    $b/\tau_R$) and displacement $u^{\text{EVE}}$
-    (Equation~\ref{eq:maxwell_step}; dashed, right axis, in units of $b$),
-    counted from the instant after the intrusion. The dashed vertical
-    line marks $x=a\tau$, the EV velocity-peak position, for direct
-    comparison with Figure~\ref{fig:viscous_halfspace_step}.
-    Middle column: speed $|v|$ in the half-space (filled contours,
-    logarithmic scale, in units of $b/\tau_R$), computed with
-    Equation~(\ref{eq:halfspace_kernel}) over $|x|\le 30H$ and
-    $z\le 30H$. Arrows show the flow direction only and have a fixed
-    length.
-    Right column: the same field enlarged to $|x|\le H$, $z\le H$ beneath
-    the rift axis, with the same colour scale. Speeds outside the colour
-    bar range $[0.01,\,1]$ are clipped to its end colours.}
+  \caption{EVE STEP response to a single dike intrusion of opening $b$.
+    Layout, units, colour scale and parameters as in
+    Fig.~\ref{fig:viscous_halfspace_step}, with $\tau_R=\eta/\mu_m$ from
+    the shared-modulus closure (eq.~\ref{eq:tau_R_shared}). Left column:
+    $v_{\text{STEP}}^{\text{EVE}}$ (eq.~\ref{eq:maxwell_vel}) and
+    $u_{\text{STEP}}^{\text{EVE}}$ (eq.~\ref{eq:maxwell_step}). Rows show
+    $t/\tau_R \in \{0^+,\,0.25,\,0.5,\,1,\,2,\,3\}$; the first row is the
+    limit $t\to0^+$, evaluated in closed form, where the surface velocity
+    reaches $b/(2\tau_R)$ at the axis (eq.~\ref{eq:maxwell_plateau}). The
+    dashed vertical line marks the EV velocity-peak position $x=at$.}
   \label{fig:maxwell_halfspace_step}
 \end{figure*}
 
@@ -976,10 +900,10 @@ The EVE RSS is the superposition of step-response velocities from all
 preceding intrusions, by the same argument as in Section~\ref{sec:css}:
 \begin{equation}
   v_{\text{RSS}}^{\text{EVE}}(x,\tau)
-  = \sum_{j=0}^{\infty} v^{\text{STEP,EVE}}(x,\,\tau + jT).
+  = \sum_{j=0}^{\infty} v_{\text{STEP}}^{\text{EVE}}(x,\,\tau + jT).
 \end{equation}
-Writing $v^{\text{STEP,EVE}}$ in Fourier space
-(Section~\ref{sec:maxwell_model}, Equation~\ref{eq:maxwell_vel}) as
+Writing $v_{\text{STEP}}^{\text{EVE}}$ in Fourier space
+(Section~\ref{sec:maxwell_model}, eq.~(\ref{eq:maxwell_vel})) as
 $\frac{b a}{\pi}\int_0^\infty \frac{\sin(kx)}{1+\tau_R ak}\,e^{-\alpha(k)(\tau+jT)}\,dk$,
 with the effective Maxwell decay rate
 \begin{equation}
@@ -1032,15 +956,15 @@ $\tau_R\to 0$, $\alpha(k)\to ak$ and $(1+\tau_R ak)^{-1}\to 1$, and
 (\ref{eq:maxwell_css_v}) reduces to the EV RSS Fourier integral whose
 closed form is the Digamma series of Section~\ref{sec:css}.  For
 $\tau_R > 0$, the saturating denominator $1+\tau_R ak$ prevents this
-reduction and (\ref{eq:maxwell_css_v}) is evaluated numerically
+reduction, and we evaluate (\ref{eq:maxwell_css_v}) numerically
 (Appendix~\ref{app:numerics}).
 
 The interior flow of the EVE RSS again follows from
-Equation~(\ref{eq:halfspace_kernel}), with $V$ set to
+eq.~(\ref{eq:halfspace_kernel}), with $v_s$ set to
 $v_{\text{RSS}}^{\text{EVE}}$ (\ref{eq:maxwell_css_v}).
 Figure~\ref{fig:maxwell_halfspace_css} shows it in the same layout,
 normalisation and phases as the EV RSS
-(Figure~\ref{fig:viscous_halfspace_css}), for the same $T = 5\tau_R$,
+(Fig.~\ref{fig:viscous_halfspace_css}), for the same $T = 5\tau_R$,
 except that its first row shows the limit $\tau\to0^+$. Far from the axis
 ($|x| \gg aT$), each flank moves at $V/2$ throughout the cycle, as in the
 EV RSS. Near the axis, the cycle starts from a finite velocity jump at the
@@ -1055,7 +979,7 @@ v_{\text{RSS}}^{\text{EVE}}(x\to0^+,\,\tau)
 so the velocity jumps by twice this value across the axis for any
 $\tau_R>0$, whereas the EV RSS vanishes continuously there. Immediately
 after an intrusion, the near-axis velocity is about
-$2.5\,V$ (Equation~\ref{eq:maxwell_rss_jump}), the elastic rebound of the
+$2.5\,V$ (eq.~\ref{eq:maxwell_rss_jump}), the elastic rebound of the
 most recent intrusion together with the remnants of earlier ones. This
 jump decays at the rate $1/\tau_R$, to about $0.9\,V$ at
 $\tau = 0.2\,T = \tau_R$ and $0.3\,V$ at $\tau = 0.4\,T$. By the end of
@@ -1071,75 +995,54 @@ column).
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{fig/fig_halfspace_css_maxwell_contour.png}
-  \caption{EVE RSS for $T=5\tau_R$, in the same layout, units and colour
-    scale as the EV RSS (Figure~\ref{fig:viscous_halfspace_css}), with
+  \caption{EVE RSS for $T=5\tau_R$. Layout, units, colour scale, phases
+    and parameters as in Fig.~\ref{fig:viscous_halfspace_css}, with
     $\tau_R=\eta/\mu_m$ from the shared-modulus closure
-    (Equation~\ref{eq:tau_R_shared}), at six phases
-    $\tau/T \in \{0^+,\,0.2,\,0.4,\,0.6,\,0.8,\,0.99\}$, one per row.
-    The first row is the limit $\tau\to0^+$, computed from its exact
-    form: the displacement since the most recent intrusion is zero, and
-    the surface velocity at the axis,
-    $(b/2\tau_R)/(1-e^{-T/\tau_R})\approx2.5\,V$
-    (Equation~\ref{eq:maxwell_rss_jump}), lies beyond the plotted range
-    and is clipped at $2\,V$.
-    Left column: surface velocity $v_{\text{RSS}}^{\text{EVE}}$
-    (Equation~\ref{eq:maxwell_css_v}; solid, left axis, in units of
-    $V=b/T$) and displacement accumulated since the most recent intrusion
-    $u_{\text{RSS}}^{\text{EVE}}$ (Equation~\ref{eq:maxwell_css_u}; dashed,
-    right axis, in units of $b$).  The dashed vertical line marks
-    $x=a\tau$, the EV velocity-peak position of the most recent intrusion
-    alone, for direct comparison with
-    Figure~\ref{fig:viscous_halfspace_css}.
-    Middle column: speed $|v|$ in the half-space (filled contours,
-    logarithmic scale, in units of $V$), computed with
-    Equation~(\ref{eq:halfspace_kernel}) over $|x|\le 4.5\,aT$ and
-    $z\le 4.5\,aT$.  Arrows show the flow direction only and have a fixed
-    length.
-    Right column: the same field enlarged to $|x|\le 0.15\,aT$,
-    $z\le 0.15\,aT$ beneath the rift axis, with the same colour scale.
-    Speeds outside the colour bar range $[0.01,\,1]$ are clipped to its
-    end colours.  Parameters as in Figure~\ref{fig:viscous_halfspace_step},
-    giving $aT \approx 67$~km.}
+    (eq.~\ref{eq:tau_R_shared}). Left column:
+    $v_{\text{RSS}}^{\text{EVE}}$ (eq.~\ref{eq:maxwell_css_v}) and
+    $u_{\text{RSS}}^{\text{EVE}}$ (eq.~\ref{eq:maxwell_css_u}). The first
+    row is the limit $\tau\to0^+$, computed from its exact form: the
+    displacement since the most recent intrusion is zero, and the axial
+    velocity $(b/2\tau_R)/(1-e^{-T/\tau_R})\approx2.5\,V$
+    (eq.~\ref{eq:maxwell_rss_jump}) lies beyond the plotted range and is
+    clipped at $2\,V$. The dashed vertical line marks the EV velocity-peak
+    position $x=a\tau$ of the most recent intrusion.}
   \label{fig:maxwell_halfspace_css}
 \end{figure*}
 
-\subsection{Constraining $\tau_R$ without an extra free parameter}
+\subsection{Shared-modulus closure for $\tau_R$}
 \label{sec:tauR_shared}
 
 Section~\ref{sec:results} fits the EVE RSS to real data alongside its
 EV counterpart.  A free $\tau_R$ alongside $(a,\,b)$ would let the extra
 parameter absorb noise rather than test whether the EVE model improves the
-fit: a model with one more free parameter always reaches at least as low a
+fit.  A model with one more free parameter always reaches at least as low a
 $\chi^2$, whether or not that parameter is physically warranted.  We
-instead derive $\tau_R$ from $a$, so that the EVE RSS carries exactly as
-many free parameters as the EV RSS it is compared against.
+instead derive $\tau_R$ from $a$, so that the EVE RSS carries the same
+number of free parameters as the EV RSS it is compared against.
 
 Doing so requires the shear modulus $\mu_m$ of the half-space, left
-general in Equation~(\ref{eq:eta_eff}) so far. By definition,
+general in eq.~(\ref{eq:eta_eff}) so far. By definition,
 $\tau_R := \eta/\mu_m$ is a material property of the half-space alone.
-The EV half-space is purely viscous and has no elastic modulus of its own:
-its decay rate $a|k|$ (\ref{eq:fourier}) depends on wavenumber and is not
-a material relaxation rate. The analogous timescale of the coupled
-plate--half-space \emph{system} is the same viscosity-over-modulus ratio,
-with the shear modulus of the plate in place of that of the half-space:
+The EV model already contains an analogous timescale, the ratio of the
+half-space viscosity to the shear modulus of the plate,
 \begin{equation}
 \tau_{\text{EV}} := \frac{\eta}{\mu_{\text{plate}}}, \qquad
-\mu_{\text{plate}} := \frac{E}{2(1+\nu)}.
+\mu_{\text{plate}} := \frac{E}{2(1+\nu)},
 \label{eq:tau_EV}
 \end{equation}
-$\tau_R$ and $\tau_{\text{EV}}$ therefore differ only in which shear
-modulus, $\mu_m$ or $\mu_{\text{plate}}$, is paired with the half-space
-viscosity $\eta$.
+which is the time the EV velocity peak takes to travel
+$a\tau_{\text{EV}} = H/(1-\nu) \approx 1.3\,H$. The two timescales differ
+only in which shear modulus, $\mu_m$ or $\mu_{\text{plate}}$, is paired with
+$\eta$.
 
 We adopt the simplest closure available without additional data: the
-half-space shares the same shear modulus as the elastic plate it
-underlies,
+half-space shares the shear modulus of the elastic plate it underlies,
 \begin{equation}
-\mu_m = \mu_{\text{plate}} := \frac{E}{2(1+\nu)}.
+\mu_m = \mu_{\text{plate}}.
 \label{eq:mu_shared}
 \end{equation}
-This closure makes the two relaxation times identical by construction,
-with no free parameter left to tune the agreement:
+This closure makes the two relaxation times identical:
 \begin{equation}
 \tau_R = \frac{\eta}{\mu_m} = \frac{\eta}{\mu_{\text{plate}}} =
   \tau_{\text{EV}}.
@@ -1153,9 +1056,9 @@ velocity (\ref{eq:a}), this gives
 a relaxation time set entirely by the fitted characteristic velocity $a$
 and the canonical parameters $H$ and $\nu$ (Section~\ref{sec:disc_rheology}),
 with no independent estimate of $\mu_m$ or $\eta$.  The shared-modulus
-closure is a simplifying assumption, not a physical necessity: the mantle
-shear modulus need not equal that of the crust.  It is, however, the
-natural default in the absence of independent constraints, and it keeps
+closure is a simplifying assumption, because the shear modulus of the
+half-space can differ from that of the plate.  We adopt it in the absence of independent
+constraints, and it keeps
 the EV-versus-EVE comparison of Section~\ref{sec:results} an
 equal-parameter test of functional form.
 
@@ -1179,58 +1082,64 @@ Both records cover only part of one cycle. They span 12--17~yr after the
 onset of the Krafla episode and 1--25~yr after the Asal event, and in
 neither case has a later intrusion been documented. We set the recurrence
 interval through the far-field conservation of the RSS
-(Equation~\ref{eq:conservation}). Each flank advances by $b/2$ per cycle,
-so the two flanks separate by the full dike opening $b$ every $T$, and the
-rift opening rate, the rate at which the two flanks separate, is
-$V = b/T$, with each flank moving at $\pm V/2$ far from the axis. We take
+(eq.~\ref{eq:conservation}). Each flank advances by $b/2$ per cycle,
+so the two flanks separate by the full dike opening $b$ every $T$. The
+rift opening rate is then $V = b/T$, and each flank moves at $\pm V/2$ far
+from the axis. We take
 $V$ from an independent, long-term estimate of the rift opening rate, from
 global plate motion models or regional geodetic studies, and derive the
 recurrence interval from the fitted opening as $T = b/V$.
 This leaves two free parameters, the characteristic velocity $a$ and the
 dike opening $b$, plus a reference-frame offset where the data require
 one. The EVE RSS carries $\tau_R$ derived from $a$ through the
-shared-modulus closure (Equation~\ref{eq:tau_R_shared}), so each EVE fit
-has exactly as many free parameters as its EV counterpart. Although the
-records are short, the RSS still contains the contribution of all earlier
-intrusions, including the far-field plate motion they sustain.
+shared-modulus closure (eq.~\ref{eq:tau_R_shared}). Each fit uses the
+full RSS, which includes the relaxation of all earlier intrusions and the
+far-field plate motion they sustain.
 
 At each site we minimise the misfit
 \begin{equation}
-\chi^2 = \sum_{i=1}^{N}
+\chi^2 = \sum_{i=1}^{n}
   \left(\frac{u_i^{\mathrm{obs}} - u_i^{\mathrm{pred}}}{\sigma_i}\right)^2,
 \label{eq:chi2}
 \end{equation}
 where $u_i^{\mathrm{obs}}$ and $u_i^{\mathrm{pred}}$ are the observed and
 predicted displacement, baseline change or velocity at data point $i$,
-$\sigma_i$ is its $1\sigma$ uncertainty, and $N$ is the number of
-observations. We report the reduced statistic $\chi^2_r = \chi^2/(N-p)$,
+$\sigma_i$ is its $1\sigma$ uncertainty, and $n$ is the number of
+observations. We report the reduced statistic $\chi^2_r = \chi^2/(n-p)$,
 where $p$ is the number of free parameters, so that $\chi^2_r \approx 1$
 indicates a fit within measurement noise. We compare the EV and EVE fits
-with the Akaike information criterion (AIC). Because both models carry
+with the Akaike information criterion (AIC) and report
+$\Delta\mathrm{AIC} = \mathrm{AIC} - \mathrm{AIC}_{\mathrm{EV}}$, so that
+positive values favour the EV RSS. Because both models carry
 the same number of free parameters, the AIC difference reduces to the
-difference in $\chi^2$, and any preference reflects the shape of the
-predicted deformation alone.
+difference in $\chi^2$, and any preference reflects only the shape of the
+predicted deformation.
 
 \begin{table*}
 \centering
 \caption{Best-fit RSS parameters for the joint Krafla and Asal fits, with
-  $1\sigma$ ranges in brackets ($\Delta\chi^2 \le 2.30$ projections, two
-  parameters). The recurrence interval is derived as $T=b/V$
-  ($V=1.8$~cm~yr$^{-1}$ at Krafla, 13~mm~yr$^{-1}$ at Asal) and $\tau_R$
+  $1\sigma$ ranges in brackets ($\Delta\chi^2 \le 2.30$ region projected
+  onto each axis of the $(a,b)$ landscape; at Krafla, $c$ is minimised at
+  every grid point). The recurrence interval is derived as $T=b/V$
+  ($V=18$~mm~yr$^{-1}$ at Krafla, 13~mm~yr$^{-1}$ at Asal) and $\tau_R$
   from $a$ through (\ref{eq:tau_R_shared}); $c$ is the reference-frame
-  offset of the \citet{hofton1996post} profile, and $k$ the number of free
-  parameters. At Asal, $\chi^2/N$ is 1.37 (EV) and 1.62 (EVE) on the 33
+  offset of the \citet{hofton1996post} profile, and $p$ the number of free
+  parameters. At Asal, $\chi^2/n$ is 1.37 (EV) and 1.62 (EVE) on the 33
   time-series points and 21.3 and 25.4 on the 15 profile points.
-  $\Delta$AIC is relative to the EV RSS at the same site.}
+  The Diffusion row is the Fickian model of \citet{foulger1992post} refit
+  under the same conditions as the RSS, with
+  $\kappa = 2.70$~m$^2$~s$^{-1}$ in place of $a$; its $1\sigma$ ranges were
+  not computed. $\Delta$AIC is relative to the EV RSS at the same site.}
 \label{tab:fits}
 \begin{tabular}{llcccccccc}
 \hline
-Site & Model & $a$ ($10^{-5}$~m~s$^{-1}$) & $b$ (m) & $T$ (yr) & $\tau_R$ (yr) & $c$ (cm) & $k$ & $\chi^2_r$ & $\Delta$AIC \\
+Site & Model & $a$ ($10^{-5}$~m~s$^{-1}$) & $b$ (m) & $T$ (yr) & $\tau_R$ (yr) & $c$ (cm) & $p$ & $\chi^2_r$ & $\Delta$AIC \\
 \hline
-Krafla ($N=37$) & EV RSS  & 4.99 [4.21, 5.82] & 1.71 [1.60, 1.80] & 95 [89, 100] & --              & 6.5 & 3 & 1.61 & --      \\
+Krafla ($n=37$) & EV RSS  & 4.99 [4.21, 5.82] & 1.71 [1.60, 1.80] & 95 [89, 100] & --              & 6.5 & 3 & 1.61 & --      \\
                 & EVE RSS & 11.9 [10.8, 13.1] & 1.60 [1.51, 1.69] & 89 [84, 94]  & 3.6 [3.2, 3.9]  & 6.6 & 3 & 1.82 & $+7.1$  \\
+                & Diffusion & --              & 2.81              & --           & --              & 6.4 & 3 & 4.90 & $+111.7$ \\
 \hline
-Asal ($N=48$)   & EV RSS  & 1.00 [0.97, 1.04] & 0.673 [0.666, 0.681] & 52 [51, 52] & --             & --  & 2 & 7.93 & --      \\
+Asal ($n=48$)   & EV RSS  & 1.00 [0.97, 1.04] & 0.673 [0.666, 0.681] & 52 [51, 52] & --             & --  & 2 & 7.93 & --      \\
                 & EVE RSS & 6.95 [6.77, 7.14] & 0.642 [0.637, 0.648] & 49 [49, 50] & 6.1 [5.9, 6.2] & --  & 2 & 9.46 & $+70.3$ \\
 \hline
 \end{tabular}
@@ -1242,7 +1151,7 @@ Asal ($N=48$)   & EV RSS  & 1.00 [0.97, 1.04] & 0.673 [0.666, 0.681] & 52 [51, 5
 The Krafla rifting episode began in December 1975 and lasted about a
 decade, with some 20 dike intrusions along the Krafla fissure swarm
 \citep{hofton1996post}. Its aftermath was recorded by GPS campaigns in
-1987, 1990 and 1992. We digitized two rift-perpendicular displacement
+1987, 1990 and 1992. We digitised two rift-perpendicular displacement
 profiles from these campaigns. The first comprises 20 stations of
 \citet{foulger1992post} (their Figure~2b), differenced between 1987 and
 1990. The second comprises 17 stations of \citet{hofton1996post} (their
@@ -1255,22 +1164,20 @@ near-rift stations that showed no significant deformation, whereas
 arbitrary. We therefore add a constant offset $c$ to the model for the
 \citet{hofton1996post} profile alone and solve for it during the fit.
 
-A joint fit first requires a common time origin for the two profiles.
-Our RSS represents each episode as a single intrusion of opening $b$, and
-it predicts each profile from the elapsed times $(\tau_i,\tau_f)$ since
-that intrusion, so both datasets must measure these times from the same
-instant. Neither published study provides one directly: both measure time
-from an origin that differs from the onset of the episode.
+We measure time for both profiles from the onset of the episode,
+$t_0 = 1975$. Our RSS represents each episode as a single intrusion of
+opening $b$ and predicts each profile from the elapsed times
+$(\tau_i,\tau_f)$ since that intrusion, so the two datasets need a common
+origin. Neither published study measures time from the onset.
 \citet{foulger1992post} treat their 1987--1990 displacements as an
 instantaneous velocity 11~yr after the dike intrusions, and
 \citet{hofton1996post} treat their 1987--1992 displacements as one 13~yr
 after, so both place the intrusion in 1979. \citet{hofton1996post}
 likewise inject all dikes of their visco-elastic model simultaneously in
 1979, and report that spreading the injections over the real nine-year
-sequence changes the 1987--1992 field negligibly. We adopt the onset of
-the episode, $t_0 = 1975$, for both datasets. The half-space begins to relax as
-soon as the first dike opens the elastic plate, in December 1975. An
-origin in 1979 would treat the stresses imposed by the intrusions of the
+sequence changes the 1987--1992 field negligibly. We prefer the onset
+because the half-space begins to relax as soon as the first dike opens the
+elastic plate, in December 1975. An origin in 1979 would treat the stresses imposed by the intrusions of the
 preceding four years as if their relaxation had not yet started. Because
 the opening was in fact spread over the episode, $t_0 = 1975$ gives the
 longest elapsed time compatible with the record, and the times since
@@ -1280,36 +1187,40 @@ $\tau = 12$--$15$~yr and $12$--$17$~yr after the intrusion.
 With this common origin, we fit both profiles jointly, because they
 record the same episode.  A single $(a,b)$ is shared by the two profiles,
 each is evaluated at its own $(\tau_i,\tau_f)$, and the pooled $\chi^2$
-(\ref{eq:chi2}) is minimized over the $N=37$ stations combined, with $c$
+(\ref{eq:chi2}) is minimised over the $n=37$ stations combined, with $c$
 as a third free parameter. The recurrence interval follows from $T = b/V$ with
-$V=1.8$~cm~yr$^{-1}$, the NUVEL-1A full spreading rate
+$V=18$~mm~yr$^{-1}$, the NUVEL-1A full spreading rate
 for north Iceland \citep{demets1994effect}, which \citet{hofton1996post}
 adopt as the time-averaged opening rate across the region.
-\citet{foulger1992post} used the 1.9~cm~yr$^{-1}$ predicted by the earlier
+\citet{foulger1992post} used the 19~mm~yr$^{-1}$ predicted by the earlier
 NUVEL-1 model, which the NUVEL-1A revision of the geomagnetic time scale
 superseded.
 
-Figure~\ref{fig:krafla_v_constrained} and Table~\ref{tab:fits} summarize
-the result.  Both models reproduce the near-rift step and the far-field
-plateau of the two profiles (Figure~\ref{fig:krafla_v_constrained}a,b)
-with $\chi^2_r < 2$, and the data favour the EV RSS at the same parameter
-count ($\Delta\mathrm{AIC}=+7.1$).
+Both models reproduce the near-rift step and the far-field plateau of the
+two profiles with $\chi^2_r < 2$ (Fig.~\ref{fig:krafla_v_constrained}a,b;
+Table~\ref{tab:fits}), and the data favour the EV RSS at the same
+parameter count ($\Delta\mathrm{AIC}=+7.1$).
 
-Both $\chi^2$ landscapes are closed and single-minimum within the
-$3\sigma$ contour (Figure~\ref{fig:krafla_v_constrained}c,d), so $a$ and
-$b$ are resolved independently despite the short observation window
-(Table~\ref{tab:fits}).  In the EVE landscape $a$ and $b$ are positively
-correlated, while in the EV landscape they are nearly independent.  Section~\ref{sec:disc_eve}
-discusses why the two rheologies are hard to separate at Krafla, and
-Section~\ref{sec:disc_rheology} the implied viscosity and recurrence
-interval.
+Both $\chi^2$ landscapes have a single closed minimum within the
+$3\sigma$ contour (Fig.~\ref{fig:krafla_v_constrained}c,d), so the
+short observation window still bounds both $a$ and $b$
+(Table~\ref{tab:fits}).  The two parameters are nearly uncorrelated in
+the EV landscape and positively correlated in the EVE landscape.
+
+For comparison, we refit the diffusion model of
+Fig.~\ref{fig:hofton_diffusion} under the same conditions as the RSS:
+one $(\kappa,b)$ shared by the two profiles, $t_0 = 1975$, and the offset
+$c$ of the \citet{hofton1996post} profile solved during the fit.  The
+refit gives $\kappa = 2.70$~m$^2$~s$^{-1}$, $b = 2.81$~m and $c = 6.4$~cm,
+with $\chi^2_r = 4.90$ against 1.61 for the EV RSS at the same parameter
+count ($\Delta\mathrm{AIC} = +111.7$; Table~\ref{tab:fits}).
 
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{fig/fig_krafla_v_constrained_combined.png}
   \caption{Joint EV and EVE RSS fits to both Krafla datasets, with $T$
     derived from the fitted dike opening $b$ through the opening-rate
-    relation $T=b/V$ at $V=1.8$~cm~yr$^{-1}$ and time measured from
+    relation $T=b/V$ at $V=18$~mm~yr$^{-1}$ and time measured from
     $t_0=1975$. (a) \citet{foulger1992post} ($\tau_i=12$~yr,
     $\tau_f=15$~yr). (b) \citet{hofton1996post} ($\tau_i=12$~yr,
     $\tau_f=17$~yr), plotted at its own uncorrected displacements, with the
@@ -1329,28 +1240,30 @@ interval.
 \subsection{Asal rift, Djibouti}
 \label{sec:asal}
 
-The November 1978 Asal--Ghoubbet rifting episode in the Afar Triangle opened
-approximately 2~m of rift-perpendicular extension over several days \citep{ledain1979seismotectonic,ruegg1984seismotectonic}.  \citet{vigny2007twenty}
+The November 1978 Asal--Ghoubbet rifting episode in the Afar Triangle produced
+about 2~m of rift-perpendicular opening over several days \citep{ledain1979seismotectonic,ruegg1984seismotectonic}.  \citet{vigny2007twenty}
 tracked the EP00--DF00 baseline, a rift-perpendicular geodetic tie crossing
 the Asal rift, from 1979 to 2003.  The baseline lengthened by
 $\approx0.5$~m, rapidly at first and much more slowly after the
 mid-1980s.  \citet{vigny2007twenty} also measured rift-perpendicular GPS
 velocities along a transect crossing the rift, at a mean epoch of
-$\approx19$~yr after the event.  We digitized all 33 time-series points
+$\approx19$~yr after the event.  We digitised all 33 time-series points
 from their Figure~3 and all 15 profile points from their velocity
 transect, and fit both jointly with the EV and EVE RSS forward models of
-Sections~\ref{sec:css} and~\ref{sec:maxwell_css}.  The predicted baseline
-change is $\Delta L = 2u(x_0,\tau)$ at $x_0 = 2000$~m, half the EP00--DF00
+Sections~\ref{sec:css} and~\ref{sec:maxwell_css}.
+
+The predicted baseline
+change is $\Delta L = 2u(x_0,\tau)$ at $x_0 = 2$~km, half the EP00--DF00
 rift-perpendicular separation, with the rifting onset fixed at
 $t_0 = 1978.85$~yr \citep{vigny2007twenty}.  The predicted velocity profile
 is evaluated at the transect epoch, with the model centre placed at
 $x=+1$~km northeast of the topographic rift axis, following
-\citet{vigny2007twenty}.  Because the \citeauthor{vigny2007twenty} time
-series is referenced to the first measurement epoch
-($\tau_{\mathrm{ref}} \approx 1.1$~yr after the rifting event) rather than to
-the rifting onset, we subtract from each model curve its own prediction at
-$\tau_{\mathrm{ref}}$, anchoring $\Delta L = 0$ at the reference epoch without
-introducing a free parameter.
+\citet{vigny2007twenty}.  The time series of \citet{vigny2007twenty} is
+referenced to the first measurement epoch, $\tau_{\mathrm{ref}} \approx
+1.1$~yr after the rifting event, rather than to the onset.  We therefore
+subtract from each model curve its own prediction at $\tau_{\mathrm{ref}}$,
+which anchors $\Delta L = 0$ at the reference epoch without introducing a
+free parameter.
 
 As at Krafla, the recurrence interval follows from the opening-rate
 relation $T = b/V$.  We take
@@ -1358,33 +1271,31 @@ $V = 13$~mm~yr$^{-1}$, the long-term Arabia--Somalia rate reported by
 \citet{vigny2007twenty}.  We do not use the $\approx16$~mm~yr$^{-1}$ opening
 they measure across the Asal rift itself: they attribute its excess over
 the long-term rate to the post-1978 transient, which the RSS already produces,
-so adopting it as $V$ would count the transient twice.  The velocity
+so adopting it as $V$ would count the transient twice.
+
+The velocity
 profile is expressed in the Somalia reference frame, in which the SW flank
 is nearly fixed and the NE flank moves at the full rate.  Because the
-model's far-field asymptotes are $\pm V/2$, the frame shift is $V/2$ by
-construction rather than a fitted offset.  No second intrusion has been
+model's far-field asymptotes are $\pm V/2$, the frame shift is $V/2$ and
+is not fitted.  No second intrusion has been
 documented at Asal--Ghoubbet since 1978: \citet{smittarello2016transient}
 analyse over 40~yr of geodetic monitoring (1972--2016) as the relaxation of
 that single event.  We therefore require $T \geq T_{\min} = 37.2$~yr, the
 1978--2016 span, which under $T = b/V$ becomes the lower bound
-$b \geq V\,T_{\min} \approx 0.48$~m.  Only $(a,b)$ remain free, and the EVE
-variant carries $\tau_R$ derived from $a$ through (\ref{eq:tau_R_shared}).
+$b \geq V\,T_{\min} \approx 0.48$~m.  Only $(a,b)$ remain free.
 
-Figure~\ref{fig:asal_v_constrained} and Table~\ref{tab:fits} summarize
-the result.  Neither fit sits on the $T_{\min}$ floor.  Both
-models reproduce the time series closely, with $\chi^2/N = 1.37$ for the
+The EV RSS fits the Asal record better than the EVE RSS at equal
+parameter count ($\Delta\mathrm{AIC} = +70.3$;
+Fig.~\ref{fig:asal_v_constrained}, Table~\ref{tab:fits}).  Both
+models reproduce the time series closely, with $\chi^2/n = 1.37$ for the
 EV RSS and $1.62$ for the EVE RSS over its 33 points.  The elevated joint
-$\chi^2_r$ comes from the profile ($\chi^2/N = 21.3$ and $25.4$ over its 15
+$\chi^2_r$ comes from the profile ($\chi^2/n = 21.3$ and $25.4$ over its 15
 points), where the observed SW--NE asymmetry exceeds what a single
 symmetric transient can produce.  The EVE profile also shows a velocity
 jump of $\approx4.6$~mm~yr$^{-1}$ at the model centre
-(Figure~\ref{fig:asal_v_constrained}b), the RSS jump of
-Equation~(\ref{eq:maxwell_rss_jump}) at $\tau \approx 19$~yr.  The EV RSS
-fits better at equal parameter count, with $\Delta\mathrm{AIC} = +70.3$ in
-its favour.  Section~\ref{sec:disc_eve} discusses why the Asal record
-separates the two rheologies, and Section~\ref{sec:disc_rheology} the
-implied viscosity and the field observations that the fits do not
-reproduce.
+(Fig.~\ref{fig:asal_v_constrained}b), the RSS jump of
+eq.~(\ref{eq:maxwell_rss_jump}) at $\tau \approx 19$~yr.  Neither fit
+sits on the $T_{\min}$ floor.
 
 Figure~\ref{fig:asal_v_constrained}c,d shows the joint (time series +
 profile) $\chi^2$ landscapes for both rheologies.  The combined dataset
@@ -1419,8 +1330,8 @@ above the $T_{\min}$ floor, with $1\sigma$ ranges of a few per cent
 \section{Discussion}
 \label{sec:discussion}
 
-% ── §4.1 ─────────────────────────────────────────────────────────────────────
-\subsection{Inter-rifting deformation as the memory of discrete intrusions}
+% ── §5.1 ─────────────────────────────────────────────────────────────────────
+\subsection{Inter-rifting deformation from discrete intrusions}
 \label{sec:disc_bcs}
 
 Kinematic models of inter-rifting deformation need a free parameter that
@@ -1429,58 +1340,52 @@ the mechanics of a magmatic rift does not supply.  Backslip models
 \citep{lafemina2005geodetic,konca2018slip} reproduce observed velocity
 gradients through a locking depth or a creep-zone geometry, which carries
 no independent constraint where the rheological transition is gradational.
-Numerical visco-elastic simulations face the same obstacle at their lateral
-boundaries: these must either force the far-field velocity to zero, in
+Numerical visco-elastic simulations meet the same obstacle at their lateral
+boundaries, which must either force the far-field velocity to zero, in
 contradiction with global plate motion models \citep{altamimi2016itrf2014},
 or prescribe the divergence rate that the model is meant to predict
 \citep{hofton1995horizontal,hofton1996post}.
 
-The RSS removes both requirements, because it treats inter-rifting
-deformation as the superposed relaxation of all past intrusions rather
-than as a separate process.  Far-field plate divergence follows from the
-conservation of the opening over each cycle
-(Equation~\ref{eq:conservation}), not from a boundary condition, and the
-only length scale is the deformation half-width
-$aT = EHT/[2\eta(1-\nu^2)]$, set by the balance between elastic stresses in
-the plate and viscous drag at its base.  A station that records a steady
-velocity far from the rift therefore does not reveal continuous creep at
-depth: it records the cumulative relaxation of intrusions that occurred
-many cycles earlier.
+The RSS removes both requirements because it treats inter-rifting
+deformation as the superposed relaxation of all past intrusions.
+Far-field plate divergence follows from the conservation of the opening
+over each cycle (eq.~\ref{eq:conservation}), and the only length
+scale is the deformation half-width $aT = EHT/[2\eta(1-\nu^2)]$, set by the
+balance between elastic stresses in the plate and viscous drag at its
+base.  In the RSS, the steady velocity recorded far from the rift is the
+summed relaxation of intrusions that occurred many cycles earlier.  A
+steady far-field velocity therefore cannot, on its own, be taken as
+evidence of creep at depth.
 
-This memory sets the conditions under which the RSS applies.  Truncating
-the history after $N$ intrusions leaves a velocity deficit of about
-$(V/\pi)\arctan[|x|/(NaT)]$ (Section~\ref{sec:css}), so the RSS is
-reproduced to within 5 per cent of the far-field velocity $V/2$ only where
-$N \gtrsim 13\,|x|/(aT)$.  The number of intrusions a rift must have hosted
-thus grows linearly with distance from its axis, a direct consequence of
-the slowly decaying $1/x$ tail of the step response
-(Section~\ref{sec:step_selfsimilar}).  The farthest stations used here lie
-at $0.9\,aT$ at Krafla and $0.6\,aT$ at Asal, so the RSS describes them
-provided each rift has hosted more than about 12 and 8 intrusions, about
-1100 and 400~yr of rifting at the derived recurrence intervals.  On a newly
-initiated rift segment, or at stations far beyond $aT$, the explicit finite
-sum (\ref{eq:finite_sum}) should replace the RSS.
+This dependence on past intrusions limits where the RSS applies.  Because
+the step response decays only as $1/x$ (Section~\ref{sec:step_selfsimilar}),
+the number of intrusions needed to reach the RSS grows linearly with
+distance from the axis, $N \gtrsim 13\,|x|/(aT)$ (Section~\ref{sec:css}).
+The farthest stations used here lie at $0.9\,aT$ at Krafla and $0.6\,aT$
+at Asal. The RSS describes these stations provided Krafla and Asal have hosted
+more than about 12 and 8 intrusions, respectively, or about 1100 and
+400~yr of rifting at the derived recurrence intervals.
 
-% ── §4.2 ─────────────────────────────────────────────────────────────────────
+% ── §5.2 ─────────────────────────────────────────────────────────────────────
 \subsection{Non-local versus Fickian relaxation}
 \label{sec:disc_nonlocal}
 
 The EV model and the diffusion model of \citet{foulger1992post} differ in
-the order of their governing equation, not only in their parameters.  The
+the order of their governing equation.  The
 Fickian model, $\partial u/\partial t = \kappa\,\partial^2 u/\partial x^2$,
 damps each Fourier mode at the rate $\kappa k^2$; the EV model
-(Equation~\ref{eq:fourier}) damps it at $a|k|$, the Fourier signature of the
+(eq.~\ref{eq:fourier}) damps it at $a|k|$, the Fourier signature of the
 half-Laplacian.  This operator arises from the $1/(x-x')^2$ Stokes kernel
-(\ref{eq:stokes}): the half-space transmits stress instantaneously, so
-every point of the plate feels an intrusion from the first instant, and no
-diffusive front is needed to reach it.  The step velocity is therefore a
+(\ref{eq:stokes}), through which the half-space transmits stress
+instantaneously, so that every point of the plate starts to move as soon
+as the dike opens.  As a result, the step velocity is a
 Lorentzian with a $1/x$ tail (\ref{eq:stepv_dimless}), against the Gaussian
 decay of the Fickian velocity (\ref{eq:foulger_v_dimless},
-Figure~\ref{fig:step_selfsimilar}b).
+Fig.~\ref{fig:step_selfsimilar}b).
 
-The two solutions are nevertheless exactly related.  By Bochner
-subordination \citep{metzler2000random}, the EV decay factor is an average
-of Fickian decay factors over an effective diffusion time $s$,
+Despite this difference, the EV decay factor equals an average of Fickian
+decay factors over an effective diffusion time $s$, a relation known as
+Bochner subordination \citep{metzler2000random},
 \begin{equation}
 e^{-a|k|t} = \int_0^{\infty} e^{-k^2 s}\, g_t(s)\,ds, \qquad
 g_t(s) = \frac{at}{2\sqrt{\pi}}\, s^{-3/2}\,
@@ -1496,58 +1401,62 @@ these carry the $1/x$ tail.  The Fickian model retains a single diffusion
 time, $s = \kappa t$, and discards that tail.
 
 The two formulations leave distinct, observable signatures.  The EV
-velocity peak migrates at the constant speed $a$, so a station at distance
-$x$ records its peak at $t = x/a$; the Fickian peak arrives at
-$t = x^2/(6\kappa)$ (Section~\ref{sec:step_selfsimilar}).  The far fields
-also differ: the RSS settles onto the plate velocity $\pm V/2$, while the
-Fickian profile returns to its reference level.  Krafla illustrates the
-consequence.  We refit the diffusion model of
-Figure~\ref{fig:hofton_diffusion} under the same conditions as the RSS:
-one $(\kappa,b)$ shared by the two profiles, $t_0 = 1975$, and the offset
-$c$ of the \citet{hofton1996post} profile solved during the fit.  The
-refit gives $\kappa = 2.70$~m$^2$~s$^{-1}$ and $b = 2.81$~m with
-$\chi^2_r = 4.90$, against 1.61 for the EV RSS at equal parameter count.  The refit diffusion
-curves peak $\approx50$~km from the axis, whereas the data peak at
+velocity peak sits at $x = at$ and migrates outward at the constant speed
+$a$, whereas the Fickian peak sits at $x = \sqrt{2\kappa t}$ and
+decelerates as $t^{-1/2}$ (Fig.~\ref{fig:step_selfsimilar}b).  The peak
+passes a station at distance $x$ at $t = x/a$ in the EV model
+but at $t = x^2/(2\kappa)$ in the Fickian model, so its arrival time grows
+linearly with distance in the first case and quadratically in the second.
+The velocity recorded at that station also evolves differently.  In the
+EV model it decreases monotonically from the intrusion, staying nearly
+constant at $ba/(\pi x)$ until $t \approx x/a$ and then falling as
+$1/t^2$.  In the Fickian model it rises from zero to a maximum at
+$t = x^2/(6\kappa)$ before decaying.  In the far
+field, the RSS settles onto the plate velocity $\pm V/2$, while the
+Fickian profile returns to its reference level.  At Krafla, the diffusion
+model refit under the same conditions as the RSS
+(Section~\ref{sec:krafla}) fits the two profiles with $\chi^2_r = 4.90$,
+against 1.61 for the EV RSS.  Its curves peak $\approx50$~km from the axis, whereas the data peak at
 15--21~km, and they return to their reference level within $\sim150$~km.
 Networks that span both the near-rift peak and the far-field plateau,
-or time series at several distances from the axis, are therefore best
+or time series at several distances from the axis, are best
 placed to discriminate between the two formulations.
 
-% ── §4.3 ─────────────────────────────────────────────────────────────────────
-\subsection{Viscous versus visco-elastic half-space: when the data can tell}
+% ── §5.3 ─────────────────────────────────────────────────────────────────────
+\subsection{Distinguishing a viscous from a visco-elastic half-space}
 \label{sec:disc_eve}
 
 At equal $a$, the EVE model departs from the EV model only at short
 wavelengths and early times.  The elastic response of the Maxwell
 half-space saturates the decay rate of modes with $k \gtrsim 1/\ell_M$,
-where $\ell_M = a\tau_R$ (Equation~\ref{eq:maxwell_saturation}), and its
+where $\ell_M$ is the Maxwell length
+(eq.~\ref{eq:maxwell_saturation}), and its
 effect fades after a few $\tau_R$.  Its signature is a finite velocity at
-the axis that decays as $e^{-t/\tau_R}$ (Equation~\ref{eq:maxwell_plateau}),
+the axis that decays as $e^{-t/\tau_R}$ (eq.~\ref{eq:maxwell_plateau}),
 which in the RSS becomes a velocity jump across the axis
-(Equation~\ref{eq:maxwell_rss_jump}).  This jump follows from treating the
+(eq.~\ref{eq:maxwell_rss_jump}).  This jump follows from treating the
 dike as infinitely thin and the plate as a single layer; in reality we
 expect it to be spread over a distance comparable to the plate thickness
 $H$.  Under the shared-modulus closure,
-$\ell_M = H/(1-\nu)$ (Equation~\ref{eq:tau_R_shared}), about 13~km for
-$H = 10$~km, independently of $a$: the elastic signal is confined within a
+$\ell_M = H/(1-\nu)$ (eq.~\ref{eq:tau_R_shared}), about 13~km for
+$H = 10$~km, independently of $a$, so the elastic signal is confined within a
 distance of about $1.3\,H$ from the axis.
 
 Whether a record can distinguish the two rheologies therefore depends on
-two numbers: its first epoch in units of $\tau_R$, and the fraction of its
-stations that lie within $\ell_M$.  At Krafla, the observations start
+its first epoch in units of $\tau_R$ and on the fraction of its stations
+that lie within $\ell_M$.  At Krafla, the observations start
 $3.4\,\tau_R$ after the onset, and only five of 20 and three of 17 stations
 lie within $\ell_M \approx 13$~km of the axis.  Most of the elastic
 contribution has decayed by then, and the data favour the EV RSS only modestly
 ($\Delta\mathrm{AIC} = +7.1$).  At Asal, the time series starts at
 $0.2\,\tau_R$ and the whole velocity profile lies within $\ell_M$.  This
 record samples the window where the two rheologies differ most, and the
-comparison is decisive ($\Delta\mathrm{AIC} = +70.3$ in favour of the EV
-RSS).
+data favour the EV RSS strongly ($\Delta\mathrm{AIC} = +70.3$).
 
-Two caveats qualify this preference.  First, it rests on the shared-modulus
-closure, which ties $\tau_R$ and $\ell_M$ to $a$ and $H$; a mantle shear
-modulus different from that of the plate would shift both scales.  Second,
-the choice of rheology changes the inferred viscosity.  The EVE fits
+This preference rests on the shared-modulus closure, which ties $\tau_R$
+and $\ell_M$ to $a$ and $H$; a half-space shear modulus different from
+that of the plate would shift both scales.  The choice of rheology also
+matters for the inferred viscosity.  The EVE fits
 require a larger characteristic velocity than the EV fits, by a factor of
 2.4 at Krafla and 6.9 at Asal (Table~\ref{tab:fits}), which lowers $\eta$ to
 $1.8\times10^{18}$ and $3.1\times10^{18}$~Pa~s at $H = 10$~km and
@@ -1556,16 +1465,16 @@ uncertainty on $a$ by more than an order of magnitude.  Viscosities inferred
 from post-diking geodesy are therefore conditional on the assumed
 half-space rheology as much as on the elastic parameters.
 
-% ── §4.4 ─────────────────────────────────────────────────────────────────────
-\subsection{What the fits constrain, and where the model falls short}
+% ── §5.4 ─────────────────────────────────────────────────────────────────────
+\subsection{Inferred viscosity and model limitations}
 \label{sec:disc_rheology}
 
-The fits constrain the composite parameter $a = EH/[2\eta(1-\nu^2)]$, not
-the viscosity alone.  For fixed $E$, the best-fit $a$ maps onto an iso-$a$
+The fits constrain the composite parameter $a = EH/[2\eta(1-\nu^2)]$.
+For fixed $E$, the best-fit $a$ maps onto an iso-$a$
 band in the $(H,\eta)$ plane
-(Figures~\ref{fig:rheology_1sigma_krafla} and~\ref{fig:rheology_1sigma_asal}),
-and an independent estimate of the seismogenic thickness,
-$H \approx 5$--$15$~km in Iceland and the Afar
+(Figs~\ref{fig:rheology_1sigma_krafla} and~\ref{fig:rheology_1sigma_asal}).
+An independent estimate of $H$, for which we take the seismogenic
+thickness, $H \approx 5$--$15$~km in Iceland and the Afar
 \citep{stevens2021tectonic,plasman2017lithospheric,weinstein2017fault},
 turns it into a viscosity.  For the canonical $H = 10$~km, $E = 40$~GPa and
 $\nu = 0.25$, the EV RSS gives $\eta \approx 4.3\times10^{18}$~Pa~s at
@@ -1573,41 +1482,50 @@ Krafla and $\eta \approx 2.1\times10^{19}$~Pa~s at Asal.  The 1$\sigma$
 ranges from the $\chi^2$ landscapes alone are narrow,
 $[3.7,\,5.1]\times10^{18}$ and $[2.05,\,2.21]\times10^{19}$~Pa~s.  Adding
 an uncertainty on $E$ over $[20,\,80]$~GPa in quadrature widens them to
-$[2.1,\,8.7]\times10^{18}$ and $[1.1,\,4.3]\times10^{19}$~Pa~s: the
-elastic modulus, not the fit, dominates the error budget.  The Krafla value
+$[2.1,\,8.7]\times10^{18}$ and $[1.1,\,4.3]\times10^{19}$~Pa~s, so the
+elastic modulus dominates the error budget.  The Krafla value
 lies below the bound $\eta < 10^{19}$~Pa~s of
 \citet{sigmundsson1991postglacial} and within the post-glacial rebound
 range for Iceland \citep{sigmundsson2010geodetic}, consistent with the hot
 sub-lithospheric mantle of the Iceland plume \citep{holtzman2016questions}.
 The Asal value is five times higher, and higher than estimates for the
-Dabbahu segment of the same rift system
-($\eta \approx 5\times10^{18}$~Pa~s; \citealt{nooner2009post};
-$\eta \sim 10^{18}$~Pa~s for $H = 21$~km; Hamling et al., 2014
-[CITE NEEDED]).
+Dabbahu segment of the same rift system.  There, \citet{nooner2009post}
+find $\eta \approx 5\times10^{18}$~Pa~s beneath a 12--14~km elastic layer,
+and \citet{hamling2014insar} find $\eta \approx 10^{18}$--$10^{18.5}$~Pa~s
+beneath a $\sim$21~km elastic layer once magmatic sources are included.  At Asal itself, a thermo-mechanical model of
+the first 6--8~yr after rifting gives a near-axis effective viscosity of
+$0.5$--$1\times10^{18}$~Pa~s \citep[][Fig.~\ref{fig:rheology_1sigma_asal}]{cattin2005numerical},
+well below our estimate.  This is consistent with a near-axis viscosity
+lower than the laterally averaged value that the 25-yr geodetic record
+constrains.
 
 The deformation half-width explains why the profiles constrain $b$ at all
-(Figure~\ref{fig:css_width}).  With the derived recurrence intervals,
+(Fig.~\ref{fig:css_width}).  With the derived recurrence intervals,
 $aT \approx 149$~km at Krafla and $\approx16$~km at Asal, comparable to the
 extent of each network on either side of the rift.  Each network therefore
 samples the transition from the near-rift transient to the far-field
-plateau $\pm V/2$, rather than the transient alone or the plateau alone, and
-through $T = b/V$ this transition fixes the opening.
+plateau $\pm V/2$, and through $T = b/V$ this transition fixes the
+opening.
 
-The fits also expose what the model leaves out.  At Krafla, the derived
+Several misfits remain.  At Krafla, the derived
 $T = 89$--$95$~yr is about a third of the $\sim250$~yr between the
 1724--1729 and 1975--1984 crises.  At Asal, the fitted opening
 $b = 0.67$~m is about a third of the $\approx1.9$~m measured across the
 rift after the 1978 event \citep{ruegg1979geodetic}.  The predicted early
 lengthening rate exceeds the trilateration rate by 27 per cent
 \citep{ruegg1987deformation}, and the profile retains an SW--NE asymmetry
-that a symmetric model cannot produce ($\chi^2/N \approx 21$).  Each misfit
-points to an ingredient absent from the model: a single, infinitely thin
-dike in one elastic layer, symmetric about the axis, with no shallow
-magmatic source and strictly periodic recurrence.
+that a symmetric model cannot produce ($\chi^2/n \approx 21$).  Each misfit
+points to a simplification of the model, which assumes a single,
+infinitely thin dike in a single elastic plate, symmetry about the axis,
+strictly periodic recurrence and no shallow magmatic source.
 \citet{smittarello2016transient} argue that magma supply rather than
-visco-elastic relaxation controls the post-diking velocity field at Asal,
-and our single-parameter description cannot separate the two without an
-independent constraint on the magmatic budget.  The fitted $(a,b)$ are
+visco-elastic relaxation controls the post-diking velocity field at Asal.
+At Dabbahu, \citet{hamling2014insar} likewise find that relaxation alone
+cannot reproduce the post-rifting deformation, and that inflation and
+deflation of magma bodies within the rift segment account for a large
+part of the signal.  Our model contains relaxation only, so any contribution from magma supply
+is absorbed into the fitted $(a,b)$; separating the two requires an
+independent constraint on the magmatic budget.  The fitted parameters are
 therefore effective values for a symmetric, periodic rift, and the
 viscosities derived from them inherit this simplification.
 
@@ -1620,12 +1538,12 @@ viscosities derived from them inherit this simplification.
     best-fit value.  Dark shading propagates the 1$\sigma$ uncertainty on $a$
     from the joint $\chi^2$ landscape at fixed $E = 40$~GPa; light shading additionally
     propagates $E$ over $[20,\,80]$~GPa (combined 1$\sigma$ envelope).  The
-    $H = 10$~km dashed line marks the reference elastic thickness, and the
+    $H = 10$~km dashed line marks the reference plate thickness, and the
     filled circle with error bar the best fit at that thickness with its
     1$\sigma$ range at $E=40$~GPa.  Published estimates: dashed boxes,
     the channel-model viscosities of \citet{foulger1992post} and
-    \citet{heki1993plate} for an elastic layer of 8--30~km (viscosities of
-    a thin channel, not of a half-space, so not directly comparable); open
+    \citet{heki1993plate} for an elastic layer of 8--30~km (thin-channel
+    viscosities, not directly comparable); open
     square, \citet{hofton1996post}; open circle with error bar,
     \citet{wright2012geophysical}, drawn at $H=11$~km for legibility; open
     triangle, the upper bound $\eta\le10^{19}$~Pa~s of
@@ -1642,16 +1560,13 @@ viscosities derived from them inherit this simplification.
     value.  Dark shading propagates the 1$\sigma$ uncertainty on $a$ from the
     joint $\chi^2$ landscape at fixed $E = 40$~GPa; light shading additionally
     propagates $E$ over $[20,\,80]$~GPa (combined 1$\sigma$ envelope).  The
-    $H = 10$~km dashed line marks the reference elastic thickness; markers show
+    $H = 10$~km dashed line marks the reference plate thickness; markers show
     published viscosity estimates: filled diamond, \citealt{nooner2009post}, and
     star with error bar, \citealt{wright2012geophysical}, both for the Dabbahu
-    segment of the same rift system; orange box, \citealt{cattin2005numerical} — near-axis effective
-    viscosity $\eta = 0.5$--$1\times10^{18}$~Pa~s from a 2D thermo-mechanical
-    FEM model of the first 6--8~yr post-rifting at Asal, with the seismogenic
-    layer thickness $H = 3$--$12$~km from the same study.  The Cattin et al.\
-    box lies well below the iso-$a$ curve, consistent with the local
-    near-axis viscosity being lower than the laterally averaged bulk estimate
-    from the 25-yr geodetic record.}
+    segment of the same rift system; orange box, \citealt{cattin2005numerical}:
+    near-axis effective viscosity $\eta = 0.5$--$1\times10^{18}$~Pa~s from a
+    2D thermo-mechanical finite-element model of the first 6--8~yr after
+    rifting at Asal, with $H = 3$--$12$~km from the same study.}
   \label{fig:rheology_1sigma_asal}
 \end{figure}
 
@@ -1666,35 +1581,30 @@ viscosities derived from them inherit this simplification.
     dash-dot lines mark the total span of each geodetic network used in
     this study: 230~km for Krafla \citep[distance between outermost
     stations;][]{foulger1992post} and 17~km for Asal \citep[GPS profile
-    extent;][]{vigny2007twenty}.  The half-width $aT$ is comparable to the
-    extent of each network on either side of the rift.}
+    extent;][]{vigny2007twenty}.}
   \label{fig:css_width}
 \end{figure}
 
-% ── §4.5 ─────────────────────────────────────────────────────────────────────
+% ── §5.5 ─────────────────────────────────────────────────────────────────────
 \subsection{Irregular recurrence}
 \label{sec:disc_stochastic}
 
-The RSS assumes that intrusions recur at a fixed interval $T$, with a fixed
-opening $b$, always at the same place, and none of this holds in nature.
-Magmatic rifting is episodic; the $\sim250$~yr gap between the Krafla
-crises is a single estimate from a sparse historical record, dike openings
-vary within and between sequences \citep{thordarson2007volcanism}, and
-successive dikes need not open on the same plane.  We therefore tested how
-closely the RSS describes a rift whose timing, opening and dike position
-vary from cycle to cycle, keeping $T = b/V$ on average in every case.  Each
-realisation sums the EV step velocities (\ref{eq:stepv}) of 300 past
-intrusions.  We considered four cases (Figure~\ref{fig:stochastic_css}):
-(a) openings $b_j$ drawn at random with $T$ fixed, a contrast in which the
-opening does not match the interval; (b) intervals $T_j$ drawn at random
-with each opening coupled to the preceding interval, $b_j = V T_j$;
-(c) the position $x_j$ of each intrusion drawn from a Normal distribution
-of standard deviation $\sigma_x = 0.1\,aT$, with periodic timing and
-opening; and (d) cases (b) and (c) combined.  $T_j$ and $b_j$ follow Normal
-distributions with coefficient of variation $c_v = 0.30$, truncated at
-5 per cent of the mean.  Each case comprises 500 realisations at phase
-$\tau/T = 0.5$.  A uniform distribution of $x_j$ with the same standard
-deviation gives bands within 10 per cent of the Normal case.
+The RSS assumes that intrusions recur at a fixed interval $T$, with a
+fixed opening $b$ and at a fixed position.  Natural rifts depart from all
+three.  The $\sim250$~yr gap between the Krafla crises is a single
+estimate from a sparse historical record, dike openings vary within and
+between sequences \citep{thordarson2007volcanism}, and successive dikes
+need not open on the same plane.  To assess these departures, we summed the EV step
+velocities (\ref{eq:stepv}) of many past intrusions whose timing, opening
+and position vary from cycle to cycle, keeping $T = b/V$ on average
+(Appendix~\ref{app:stochastic}).  We considered four cases
+(Fig.~\ref{fig:stochastic_css}a--d).  In the first, openings $b_j$ vary
+at random while the interval stays fixed, so that opening and interval
+are uncoupled.  In the second, intervals $T_j$ vary and each opening
+matches the preceding interval, $b_j = V T_j$.  In the third, timing and
+opening are periodic but the dike position $x_j$ scatters about the axis
+with standard deviation $\sigma_x = 0.1\,aT$.  The fourth combines the
+second and third.
 
 In all four cases the ensemble median follows the deterministic RSS to
 within 3 per cent of the far-field velocity $V/2$.  For scatter in $b_j$ or
@@ -1708,21 +1618,22 @@ measure how far a single realisation departs from it.
 The three sources of scatter act at different distances from the axis,
 because each station integrates a different set of past intrusions.  Near
 the axis, the contribution of an intrusion decays with its age $t$ as
-$1/t^2$ (Equation~\ref{eq:stepv}), so the most recent ones dominate;
-farther out, a station also feels every intrusion younger than about
-$|x|/a$.  In units of $V/2$, the 10--90 per cent band of the contrast case
-(a) reaches 0.46 at $\xi = 0.3$ and still 0.20 at $\xi = 5$: when openings
+$1/t^2$ (eq.~\ref{eq:stepv}), so the most recent ones dominate;
+farther out, a station also records the contribution of every intrusion
+younger than about $|x|/a$.  In units of $V/2$, the 10--90 per cent band
+of the uncoupled case (a) reaches 0.46 at $x = 0.3\,aT$ and still 0.20 at $x = 5\,aT$. When openings
 do not match the intervals, the plateau of a single realisation reflects
 the opening rate realised over the last few cycles.  Coupling the openings
 to the intervals (b) removes most of that far-field spread (0.31 at
-$\xi = 0.3$, 0.06 at $\xi = 2$, 0.01 at $\xi = 5$), because the opening
+$x = 0.3\,aT$, 0.06 at $2\,aT$, 0.01 at $5\,aT$), because the opening
 delivered over any time window then equals $V$ times that window.  Scatter
 in dike position (c) acts only near the axis, where the band reaches 0.62
-of $V/2$, and decays to 0.24 at $\xi = 0.3$ and below 0.01 at $\xi = 5$:
-far from the axis, a shift of the source by $\sigma_x$ barely changes the
+of $V/2$, and decays to 0.24 at $x = 0.3\,aT$ and below 0.01 at
+$x = 5\,aT$.
+Far from the axis, a shift of the source by $\sigma_x$ barely changes the
 distance to the station.  Combined, coupled timing and dike position (d)
-give a band of 0.6 at the axis that narrows to 0.18 at $\xi = 1$ and
-0.02 at $\xi = 5$.
+give a band of 0.6 at the axis that narrows to 0.18 at $x = aT$ and
+0.02 at $x = 5\,aT$.
 
 These results bear directly on the fits of Section~\ref{sec:results}.  Both
 networks lie within one half-width of the axis, $|x| \lesssim 0.9\,aT$ at
@@ -1733,7 +1644,7 @@ zone a few kilometres wide corresponds to $\sigma_x/(aT)$ of order 0.1 at
 Asal ($aT \approx 16$~km) but of order 0.01 at Krafla ($aT \approx 149$~km).
 The fitted $(a,b)$ therefore carry an uncertainty from cycle-to-cycle
 variability that the $\chi^2$ landscapes do not include.  The bands of
-Figure~\ref{fig:stochastic_css} are computed at one phase and one level of
+Fig.~\ref{fig:stochastic_css} are computed at one phase and one level of
 scatter, so they indicate the size of this effect rather than quantify it
 for either site.
 
@@ -1746,23 +1657,22 @@ for either site.
     normalised by $b/T$ and distance by $aT$.  Shaded bands show the
     10th--90th percentile range; coloured lines are ensemble medians; the
     black dashed line is the deterministic RSS (\ref{eq:vcss}); vertical
-    dashed lines mark $\xi = \pm 1$.  (a)~Contrast: openings $b_j$ random
+    dashed lines mark $x = \pm aT$.  (a)~Uncoupled: openings $b_j$ random
     ($c_v = 0.30$) with $T$ fixed.  (b)~Intervals $T_j$ random ($c_v = 0.30$)
     with each opening coupled to the preceding interval, $b_j = V T_j$.
     (c)~Dike position $x_j$ random, Normal with $\sigma_x = 0.1\,aT$, periodic
     timing and opening.  (d)~Cases (b) and (c) combined.  Insets in (c) and
-    (d) enlarge $|\xi| \le 0.5$.  In all four cases the ensemble median stays
-    within 3 per cent of $V/2$ of the deterministic RSS.}
+    (d) enlarge $|x| \le 0.5\,aT$.}
   \label{fig:stochastic_css}
 \end{figure}
 
-% ── §4.6 ─────────────────────────────────────────────────────────────────────
+% ── §5.6 ─────────────────────────────────────────────────────────────────────
 \subsection{Perspectives}
 \label{sec:disc_perspectives}
 
 The RSS velocity depends on three combinations of the model parameters:
 the half-width $aT$, the far-field velocity $b/(2T) = V/2$, and the phase
-$\tau/T$ (Equation~\ref{eq:vcss}).  Our fits derive the recurrence
+$\tau/T$ (eq.~\ref{eq:vcss}).  Our fits derive the recurrence
 interval from the fitted opening and an independent rift opening rate,
 $T = b/V$ (Section~\ref{sec:results}).  Records that span a larger
 fraction of a cycle, or snapshots repeated over decades, would sample the
@@ -1786,77 +1696,59 @@ Stokes coupling at the base of the plate.
 \section{Conclusions}
 \label{sec:conclusions}
 
-Inter-rifting deformation at magmatic rifts can be described as the
-superposed relaxation of a long history of discrete dike intrusions in an
-elastic plate over a viscous half-space.  In the limit of many intrusions,
-this superposition reaches a Recurrent Steady State with a closed form in
-the Digamma and log-Gamma functions.  The RSS conserves the opening of
-each intrusion over one cycle, so far-field plate divergence follows from
-the model itself rather than from a locking depth, a prescribed domain
-width or a boundary condition, and its only length scale is the
-deformation half-width $aT$.  A steady velocity far from the rift is
-therefore the memory of intrusions that occurred many cycles earlier, not
-evidence of continuous creep at depth.  This memory also sets the validity
-of the RSS: a station at distance $|x|$ is described by it only if the rift
-has hosted more than about $13\,|x|/(aT)$ intrusions.
+Steady inter-rifting velocities at magmatic rifts can arise from discrete
+dike intrusions alone.  In the RSS, the relaxation of past intrusions
+produces the far-field plate divergence, and the deformation half-width
+$aT$ is the only length scale.  Because old intrusions carry this
+divergence, the RSS describes a station at distance $|x|$ only if the rift
+has hosted more than about $13\,|x|/(aT)$ intrusions.  On young rift
+segments, or far beyond $aT$, the finite sum of past intrusions should
+replace it.
 
-The coupling of the plate to the half-space through the Stokes kernel
-turns post-diking relaxation into a fractional diffusion governed by the
-half-Laplacian.  Deformation then spreads from the rift at the constant
-speed $a$ with a $1/x$ tail, instead of the decelerating front and Gaussian
-tail of Fickian diffusion.  The Fickian model of \citet{foulger1992post} is
-the same relaxation evaluated at a single diffusion time, whereas the EV
-solution averages Fickian profiles over a heavy-tailed distribution of
-diffusion times.  At Krafla, this difference is visible in the data: under
-the same conditions, the EV RSS fits the two post-rifting profiles with
-$\chi^2_r = 1.61$, against 4.90 for the diffusion model.
+Above a viscous half-space, post-diking relaxation is governed by the
+half-Laplacian, so the velocity peak migrates at the constant speed $a$
+and the profile decays as $1/x$.  The EV solution averages Fickian profiles
+over a heavy-tailed distribution of diffusion times.  The Fickian model of
+\citet{foulger1992post} retains a single diffusion time and therefore
+lacks the $1/x$ tail.  Under the same fitting conditions at Krafla, the EV
+RSS fits the two post-rifting profiles with $\chi^2_r = 1.61$, against
+4.90 for the diffusion model.
 
-A Maxwell half-space changes the response only within the Maxwell length
-$\ell_M$ of the axis and during the first few relaxation times $\tau_R$.
-With the plate and the half-space sharing one elastic modulus,
-$\ell_M = H/(1-\nu) \approx 1.3\,H$, so a geodetic record can distinguish
-the two rheologies only if it starts early in units of $\tau_R$ and has
-stations close to the axis.  The Krafla record, which starts
-$3.4\,\tau_R$ after the onset, favours the viscous half-space only
-modestly ($\Delta\mathrm{AIC} = +7.1$); the Asal record, which starts at
-$0.2\,\tau_R$, favours it decisively ($\Delta\mathrm{AIC} = +70.3$).  The
-choice of rheology also changes the inferred viscosity, by a factor of up
-to seven at Asal.
+A geodetic record can distinguish a Maxwell half-space from a viscous one
+only if it starts within a few relaxation times $\tau_R$ of the intrusion
+and includes stations within $\ell_M = H/(1-\nu) \approx 1.3\,H$ of the
+axis.  The Asal record meets both conditions and strongly favours the
+viscous half-space ($\Delta\mathrm{AIC} = +70.3$).  The Krafla record,
+which starts $3.4\,\tau_R$ after the onset, favours it only modestly
+($\Delta\mathrm{AIC} = +7.1$).  The two rheologies imply viscosities that
+differ by up to a factor of seven, so viscosities inferred from
+post-diking geodesy depend on the assumed half-space rheology.
 
-Tying the recurrence interval to an independent rift opening rate,
-$T = b/V$, leaves two free parameters, $a$ and $b$ (plus a reference-frame
-offset at Krafla), which the Krafla and Asal records both constrain.  For $H = 10$~km and $E = 40$~GPa, the EV RSS
-implies $\eta \approx 4.3\times10^{18}$~Pa~s at Krafla and
-$\eta \approx 2.1\times10^{19}$~Pa~s at Asal, with an error budget
-dominated by the elastic modulus rather than by the fit.  The remaining
-misfits, a recurrence interval shorter than the Krafla eruptive history and
-an opening and a profile asymmetry at Asal that the model does not
-reproduce, point to the simplifications of the model: a single,
-infinitely thin dike in one elastic layer, symmetric about the axis, with
-no shallow magmatic source and strictly periodic recurrence.
+Tying $T$ to an independent opening rate leaves two parameters, $a$ and
+$b$, which both records constrain.  For $H = 10$~km and $E = 40$~GPa, the
+EV RSS implies $\eta \approx 4.3\times10^{18}$~Pa~s at Krafla and
+$2.1\times10^{19}$~Pa~s at Asal, and the uncertainty on $E$ dominates the
+error budget.  The remaining misfits reflect the simplified source
+geometry and strictly periodic recurrence of the model, so the fitted
+parameters are effective values for a symmetric, periodic rift.
 
-Irregular recurrence spreads individual velocity profiles around the RSS
-with little bias: with 30 per cent scatter in recurrence interval and
-opening, and dike positions scattered over $0.1\,aT$, the ensemble median
-stays within 3 per cent of the deterministic RSS.  The spread is largest
-within about one half-width of the axis, where the velocity reflects the
-last few intrusions.  Scatter in dike position acts only within a few
-$\sigma_x$ of the axis, and the far-field spread nearly vanishes when each
-opening scales with the preceding interval, as $T = b/V$ requires.  Extending the framework
-to segmented rifts and to the full along-strike 2D geometry, while
-retaining the non-local coupling of the plate to the half-space, is the
-next step toward a system-scale model of strain accumulation at magmatic
-plate boundaries.
+Irregular recurrence leaves the RSS largely unbiased.  With 30 per cent
+scatter in interval and opening, and dike positions scattered over
+$0.1\,aT$, the ensemble median stays within 3 per cent of the
+deterministic RSS.  Individual profiles scatter most within one
+half-width of the axis, where both networks lie, so cycle-to-cycle
+variability adds uncertainty to the fitted $(a,b)$ beyond the $\chi^2$
+landscapes.
 
 % ====================================================================
 \section*{Acknowledgements}
-[PLACEHOLDER — funding agencies, field/computing support, reviewer thanks.]
+[PLACEHOLDER --- funding agencies, field/computing support, reviewer thanks.]
 
 % ====================================================================
 \section*{Data Availability}
 The geodetic data used in this study are from published sources cited in the
 text. The analytical model code and inversion scripts are available at
-[PLACEHOLDER — repository DOI or URL upon acceptance].
+[PLACEHOLDER --- repository DOI or URL upon acceptance].
 
 \bibliographystyle{gji}
 \bibliography{refs}
@@ -1932,20 +1824,20 @@ identity $\psi(Z)-\psi(\bar{Z}) = 2i\,\IM\{\psi(Z)\}$, the series reduces to
 \section{Correspondence principle for the Maxwell half-space}
 \label{app:correspondence}
 
-For deviatoric stress $\tau_{ij}$ and strain $\varepsilon$, the 1D
+For deviatoric stress $\sigma$ and strain $\varepsilon$, the 1D
 constitutive relation of a Maxwell body is
 \begin{equation}
-\dot{\varepsilon} = \frac{\dot{\tau}}{2\mu_m} + \frac{\tau}{2\eta}.
+\dot{\varepsilon} = \frac{\dot{\sigma}}{2\mu_m} + \frac{\sigma}{2\eta}.
 \label{eq:maxwell_constitutive}
 \end{equation}
 Applying the Laplace transform $\tilde{f}(s)=\mathcal{L}\{f(t)\}$ to
 (\ref{eq:maxwell_constitutive}) with zero initial conditions gives
 \begin{equation}
-s\tilde{\varepsilon} = \tilde{\tau}\!\left(\frac{s}{2\mu_m}+\frac{1}{2\eta}\right).
+s\tilde{\varepsilon} = \tilde{\sigma}\!\left(\frac{s}{2\mu_m}+\frac{1}{2\eta}\right).
 \label{eq:laplace_ve}
 \end{equation}
 Solving for stress in terms of the strain rate $s\tilde{\varepsilon}$ gives
-$\tilde{\tau} = 2\tilde{\eta}(s)\,(s\tilde{\varepsilon})$, with the effective
+$\tilde{\sigma} = 2\tilde{\eta}(s)\,(s\tilde{\varepsilon})$, with the effective
 viscosity $\tilde{\eta}(s)$ of (\ref{eq:eta_eff}). Laplace-transforming the
 Stokes kernel (\ref{eq:stokes}) and replacing $\eta$ by $\tilde{\eta}(s)$
 gives
@@ -1984,6 +1876,19 @@ form with the Dirichlet integral, which also gives the axis jump
 (\ref{eq:maxwell_rss_jump}). The remainder decays as $1/k^2$ on the scale
 $k \sim 1/(a\tau_R)$ and is integrated with the same segmented quadrature
 up to the fixed cutoff $10^4/(a\tau_R)$.
+
+\section{Stochastic recurrence experiments}
+\label{app:stochastic}
+
+Each realisation of Section~\ref{sec:disc_stochastic} sums the EV step
+velocities (\ref{eq:stepv}) of 300 past intrusions and is evaluated at
+phase $\tau/T = 0.5$; each case comprises 500 realisations.  Intervals
+$T_j$ and openings $b_j$ follow Normal distributions with coefficient of
+variation $c_v = 0.30$, truncated at 5 per cent of the mean.  Dike
+positions $x_j$ follow a Normal distribution of standard deviation
+$\sigma_x = 0.1\,aT$; a uniform distribution with the same standard
+deviation gives 10--90 per cent bands within 10 per cent of the Normal
+case.
 
 
 \label{lastpage}
